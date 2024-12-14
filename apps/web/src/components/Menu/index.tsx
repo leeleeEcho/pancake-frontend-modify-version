@@ -1,5 +1,5 @@
 import { languageList, useTranslation } from '@pancakeswap/localization'
-import { Text, Menu as UikitMenu, footerLinks, useModal } from '@pancakeswap/uikit'
+import { footerLinks, Menu as UikitMenu, Text, useModal } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { usePhishingBanner } from '@pancakeswap/utils/user'
 import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
@@ -13,12 +13,12 @@ import useTheme from 'hooks/useTheme'
 import { IdType, useUserNotUsCitizenAcknowledgement } from 'hooks/useUserIsUsCitizenAcknowledgement'
 import { useWebNotifications } from 'hooks/useWebNotifications'
 import { useRouter } from 'next/router'
-import { Suspense, lazy, useCallback, useMemo } from 'react'
+import { lazy, Suspense, useCallback, useMemo } from 'react'
 import { getOptionsUrl } from 'utils/getOptionsUrl'
 import GlobalSettings from './GlobalSettings'
 import { SettingsMode } from './GlobalSettings/types'
+import { useMenuItems, UseMenuItemsParams } from './hooks/useMenuItems'
 import UserMenu from './UserMenu'
-import { UseMenuItemsParams, useMenuItems } from './hooks/useMenuItems'
 import { getActiveMenuItem, getActiveSubMenuChildItem, getActiveSubMenuItem } from './utils'
 
 const Notifications = lazy(() => import('views/Notifications'))
@@ -102,7 +102,7 @@ const Menu = (props) => {
   const getFooterLinks = useMemo(() => {
     return footerLinks(t)
   }, [t])
-
+  console.log('what footerlinks:', getFooterLinks)
   return (
     <UikitMenu
       linkComponent={LinkComponent}

@@ -43,9 +43,10 @@ import { persistor, useStore } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
 import { Blocklist, Updaters } from '..'
 import { SEO } from '../../next-seo.config'
-import Providers from '../Providers'
 import Menu from '../components/Menu'
+import Providers from '../Providers'
 import GlobalStyle from '../style/Global'
+import '../style/global.module.scss'
 
 const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
 

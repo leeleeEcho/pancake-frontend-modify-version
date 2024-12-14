@@ -1,0 +1,167 @@
+.homerow2 {
+  position: relative;
+  height: 800px;
+  background-color: #131219;
+  background-image: url('/ztd/home/bg3.png');
+  background-size: 1440px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  .light {
+    position: absolute;
+    top: calc(50% + 40px);
+    left: calc(50% - 20px);
+    height: 370px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    max-width: none !important;
+  }
+  .content {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+
+    .center {
+      font-weight: 900;
+      font-size: 24px;
+      color: #ffffff;
+      position: absolute;
+      top: calc(50% + 2px);
+      left: calc(50% - 8px);
+      width: 100px;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+    .icon {
+      position: absolute;
+      width: 65px;
+      max-width: none !important;
+      z-index: 10;
+      &.i99 {
+        top: -220px;
+        left: 40px;
+      }
+      &.i100 {
+        top: -32px;
+        left: -310px;
+      }
+      &.i101 {
+        top: -32px;
+        left: 160px;
+      }
+    }
+
+    .txtbox {
+      position: absolute;
+      width: 241px;
+      height: 124px;
+      background-image: url('/ztd/home/Group 49@2x.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      box-sizing: border-box;
+      padding: 20px;
+      .t {
+        text-align: center;
+        font-weight: 900;
+        font-size: 18px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        &::after,
+        &::before {
+          content: '';
+          width: 3px;
+          height: 3px;
+          background-color: #fff;
+          border-radius: 3px;
+          box-shadow: 0 0;
+          box-shadow: 0px 0px 8px 0px #ffffff;
+        }
+      }
+      .v {
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 20px;
+        margin-top: 10px;
+      }
+
+      &.t1 {
+        top: -250px;
+        left: 130px;
+      }
+      &.t2 {
+        top: 30px;
+        left: 180px;
+      }
+      &.t3 {
+        top: 30px;
+        left: -480px;
+      }
+    }
+
+    .q {
+      position: absolute;
+      border-radius: 100px;
+      border: 2px solid #5e574d;
+      background: #131219;
+    }
+    .quan1 {
+      width: 47px;
+      height: 47px;
+      top: -150px;
+      left: -186px;
+    }
+    .quan2 {
+      width: 47px;
+      height: 47px;
+      top: -150px;
+      left: 120px;
+    }
+    .quan3 {
+      width: 65px;
+      height: 65px;
+      top: 170px;
+      left: -38px;
+    }
+    .quan4 {
+      width: 47px;
+      height: 47px;
+      top: -22px;
+      left: -155px;
+    }
+    .quan5 {
+      width: 47px;
+      height: 47px;
+      top: -22px;
+      left: 90px;
+    }
+    .quan6 {
+      width: 30px;
+      height: 30px;
+      top: -120px;
+      left: -130px;
+    }
+    .quan7 {
+      width: 30px;
+      height: 30px;
+      top: 100px;
+      left: -130px;
+    }
+    .quan8 {
+      width: 30px;
+      height: 30px;
+      top: 100px;
+      left: 82px;
+    }
+    .quan9 {
+      width: 30px;
+      height: 30px;
+      top: 90px;
+      left: -20px;
+    }
+  }
+}

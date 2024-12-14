@@ -1,5 +1,5 @@
 import { LanguageProvider } from '@pancakeswap/localization'
-import { ModalProvider, PancakeTheme, ResetCSS, UIKitProvider, dark, light } from '@pancakeswap/uikit'
+import { dark, light, ModalProvider, PancakeTheme, ResetCSS, UIKitProvider } from '@pancakeswap/uikit'
 import { HydrationBoundary, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { DefaultSeo } from 'next-seo'
 import { SEO } from 'next-seo.config'
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={pageProps.dehydratedState}>
-          <NextThemeProvider>
+          <NextThemeProvider defaultTheme="dark">
             <StyledThemeProvider>
               <LanguageProvider>
                 <ModalProvider>

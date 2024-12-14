@@ -1,0 +1,207 @@
+.homerow1 {
+  position: relative;
+  width: 100%;
+  height: 1536px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 64px;
+  background-image: linear-gradient(90deg, #121118 0%, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0) 98%, #121118 100%),
+    url('/ztd/home/bg1banner_1.png'), url('/ztd/home/bg2.png');
+  background-size: min(100%, 1920px) 100%, min(100%, 1920px) auto, min(100%, 1920px) auto;
+  background-repeat: repeat-y, no-repeat, no-repeat;
+  background-position: top center, center -160px, center bottom;
+
+  @keyframes ani-shadow {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0.8;
+      transform: scale(2.6);
+    }
+  }
+
+  .shing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(rgba(255, 196, 2, 0.5), rgba(0, 0, 0, 0) 70%);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    &.ani {
+      animation: ani-shadow 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 2 alternate both;
+    }
+    &.s1 {
+      &.ani {
+        animation-delay: 0.8s;
+      }
+    }
+    &.s2 {
+      &.ani {
+        animation-delay: 1.6s;
+      }
+    }
+  }
+  .bannerbox {
+    width: 100%;
+    height: 575px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 2;
+    .bannerSlide {
+      display: flex;
+      justify-content: center;
+    }
+    .banner {
+      position: relative;
+      width: 1300px;
+      height: 570px;
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.5);
+      border-radius: 100px;
+      border: 1px solid transparent;
+      margin-bottom: 10px;
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 75px;
+      box-sizing: border-box;
+      padding: 0 200px 0 180px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, 1);
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 100px;
+        mask-image: linear-gradient(20deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+        z-index: 1;
+      }
+      .btxt {
+        position: relative;
+        z-index: 2;
+        height: 320px;
+        .wordbox {
+          position: relative;
+          min-height: 120px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .star {
+            position: absolute;
+            width: 19px;
+            top: -18px;
+            left: -50px;
+          }
+          .t {
+            font-weight: 900;
+            font-size: 26px;
+            color: #ffc402;
+            line-height: 30px;
+          }
+          .word {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 24px;
+            margin-top: 40px;
+          }
+        }
+        .line {
+          width: 370px;
+          margin-top: 32px;
+        }
+        .control {
+          display: flex;
+          align-items: center;
+          gap: 35px;
+          margin-top: 22px;
+          & > div {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            img {
+              width: 40px;
+            }
+          }
+        }
+      }
+      .bimg {
+        position: relative;
+        flex: none;
+        width: 319px;
+        height: auto;
+        z-index: 2;
+      }
+    }
+  }
+
+  .nextrow {
+    position: relative;
+    width: 100%;
+    height: 890px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/ztd/home/cloud.png'), url('/ztd/home/back_mouse.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 200px, auto 380px;
+    background-position: right 235px, left 360px;
+    .words {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 29px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #ffffff;
+        width: 100%;
+
+        img {
+          width: 19px;
+          flex: none;
+        }
+      }
+    }
+    .btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 100px;
+      & > div {
+        min-width: 220px;
+        height: 50px;
+        background: #ffc402;
+        border-radius: 50px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 50px;
+        color: #000000;
+        cursor: pointer;
+      }
+    }
+  }
+}

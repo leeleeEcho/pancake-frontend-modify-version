@@ -1,0 +1,69 @@
+.homerow5{
+    position: relative;
+    height: 458px;
+    background-image: url("/ztd/home/bg6.png");
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 86px;
+      .t{
+        font-weight: 900;
+        font-size: 30px;
+        color: #000000;
+        line-height: 35px;
+        text-shadow: -2px 2px 0px #FFFFFF;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+      }
+      .btn{
+        width: 220px;
+        height: 50px;
+        background: #000000;
+        border-radius: 99px 99px 99px 99px;
+        border: 1px solid #000000;
+        font-weight: bold;
+        font-size: 18px;
+        color: #FFFFFF;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .i{
+        position: absolute;
+      }
+      .i39{
+        width: 51px;
+        top: -40px;
+        right: -40px;
+      }
+      .i40{
+        width: 70px;
+        top: -100px;
+        left: 170px;
+      }
+      .i41{
+        width: 58px;
+        top: 50px;
+        left: 470px;
+      }
+      .i42{
+        width: 55px;
+        top: 30px;
+        left: -130px;
+      }
+      .i59{
+        width: 41px;
+        top: 100px;
+        left: 30px;
+      }
+    }
+   }
