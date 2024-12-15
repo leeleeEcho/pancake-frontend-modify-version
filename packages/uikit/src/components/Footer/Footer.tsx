@@ -1,24 +1,12 @@
 import { useIsMounted } from "@pancakeswap/hooks";
 import React from "react";
 import { useMatchBreakpoints } from "../../contexts";
-import { Box, Flex } from "../Box";
+import { Flex } from "../Box";
 import { Link } from "../Link";
-import {
-  StyledFooter,
-  StyledIconMobileContainer,
-  StyledList,
-  StyledListItem,
-  StyledSocialLinks,
-  StyledText,
-  StyledToolsContainer,
-} from "./styles";
+import { StyledFooter, StyledIconMobileContainer, StyledList, StyledListItem, StyledText } from "./styles";
 
 import { vars } from "../../css/vars.css";
-import { Button } from "../Button";
-import CakePrice from "../CakePrice/CakePrice";
-import LangSelector from "../LangSelector/LangSelector";
-import { ArrowForwardIcon, LogoIcon, LogoWithTextIcon } from "../Svg";
-import { ThemeSwitcher } from "../ThemeSwitcher";
+import { LogoWithTextIcon } from "../Svg";
 import { FooterProps } from "./types";
 
 const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
@@ -65,7 +53,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
                       data-theme="dark"
                       href={href}
                       external
-                      color={isHighlighted ? vars.colors.warning : "text"}
+                      color={isHighlighted ? vars.colors.warning : "#ccc"}
                       bold={false}
                       style={{ textTransform: "none" }}
                     >
@@ -78,10 +66,10 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
               ))}
             </StyledList>
           ))}
-          <Box display={["none", null, "block"]}>{isXl ? <LogoIcon /> : <LogoWithTextIcon width="160px" />}</Box>
+          {/* <Box display={["none", null, "block"]}>{isXl ? <LogoIcon /> : <LogoWithTextIcon width="160px" />}</Box> */}
         </Flex>
-        <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} />
-        <StyledToolsContainer
+        {/* <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} /> */}
+        {/* <StyledToolsContainer
           data-theme="dark"
           order={[1, null, 3]}
           flexDirection={["column", null, "row"]}
@@ -112,7 +100,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
               {buyCakeLabel}
             </Button>
           </Flex>
-        </StyledToolsContainer>
+        </StyledToolsContainer> */}
       </Flex>
     </StyledFooter>
   );

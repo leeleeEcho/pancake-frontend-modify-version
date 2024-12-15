@@ -1,5 +1,5 @@
 import { LanguageProvider } from '@pancakeswap/localization'
-import { DialogProvider, ModalProvider, UIKitProvider, dark, light } from '@pancakeswap/uikit'
+import { dark, DialogProvider, light, ModalProvider, UIKitProvider } from '@pancakeswap/uikit'
 import { Store } from '@reduxjs/toolkit'
 import { HydrationBoundary, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
@@ -30,7 +30,7 @@ const Providers: React.FC<
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={dehydratedState}>
           <Provider store={store}>
-            <NextThemeProvider>
+            <NextThemeProvider defaultTheme="dark">
               <LanguageProvider>
                 <StyledUIKitProvider>
                   <HistoryManagerProvider>

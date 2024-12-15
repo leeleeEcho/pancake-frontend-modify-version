@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Kumbh Sans', 'Kanit', sans-serif;
     --colors-primary: #FFC402;
+    --colors-secondary:#FFC402;
   }
 
   html {

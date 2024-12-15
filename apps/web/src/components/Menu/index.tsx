@@ -5,7 +5,6 @@ import { usePhishingBanner } from '@pancakeswap/utils/user'
 import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
 import USCitizenConfirmModal from 'components/Modal/USCitizenConfirmModal'
 import { NetworkSwitcher } from 'components/NetworkSwitcher'
-import PhishingWarningBanner from 'components/PhishingWarningBanner'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useCakePrice } from 'hooks/useCakePrice'
 import { usePerpUrl } from 'hooks/usePerpUrl'
@@ -102,7 +101,8 @@ const Menu = (props) => {
   const getFooterLinks = useMemo(() => {
     return footerLinks(t)
   }, [t])
-  console.log('what footerlinks:', getFooterLinks)
+
+  // banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
   return (
     <UikitMenu
       linkComponent={LinkComponent}
@@ -119,7 +119,6 @@ const Menu = (props) => {
         </>
       }
       chainId={chainId}
-      banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
       isDark={isDark}
       toggleTheme={toggleTheme}
       currentLang={currentLanguage.code}

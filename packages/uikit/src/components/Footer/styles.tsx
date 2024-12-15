@@ -2,9 +2,16 @@ import { styled } from "styled-components";
 import { darkColors } from "../../theme/colors";
 import { Box, Flex } from "../Box";
 import SocialLinks from "./Components/SocialLinks";
-
+//${darkColors.backgroundAlt};
 export const StyledFooter = styled(Flex)`
-  background: ${darkColors.backgroundAlt};
+  background-color: #100d1c;
+  background-image: url("/ztd/foot/cloud_back.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: bottom center;
+  box-sizing: border-box;
+  padding-top: 130px;
+  padding-bottom: 80px;
 `;
 
 export const StyledList = styled.ul`
@@ -15,14 +22,13 @@ export const StyledList = styled.ul`
     margin-bottom: 0px;
   }
 `;
-
+// ${darkColors.secondary};
 export const StyledListItem = styled.li`
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   text-transform: capitalize;
-
   &:first-child {
-    color: ${darkColors.secondary};
+    color: #fff;
     font-weight: 600;
     text-transform: uppercase;
   }

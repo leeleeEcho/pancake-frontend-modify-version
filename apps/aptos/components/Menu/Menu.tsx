@@ -11,10 +11,10 @@ import orderBy from 'lodash/orderBy'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
-import { SettingsButton } from './Settings/SettingsButton'
-import UserMenu from './UserMenu'
 import { footerLinks } from './footerConfig'
 import { ConfigMenuItemsType, useMenuItems } from './hooks/useMenuItems'
+import { SettingsButton } from './Settings/SettingsButton'
+import UserMenu from './UserMenu'
 
 export const getActiveMenuItem = ({ pathname, menuConfig }: { pathname: string; menuConfig: ConfigMenuItemsType[] }) =>
   menuConfig.find((menuItem) => pathname.startsWith(menuItem.href) || getActiveSubMenuItem({ menuItem, pathname }))
