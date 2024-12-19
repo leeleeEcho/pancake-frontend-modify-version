@@ -36,15 +36,7 @@ export function CurrencyInputPanelSimplify({
       <AtomBox display="flex" alignItems="center" justifyContent="space-between" mb="8px">
         {top}
       </AtomBox>
-      <AtomBox
-        display="flex"
-        flexDirection="column"
-        flexWrap="nowrap"
-        position="relative"
-        backgroundColor="backgroundAlt"
-        zIndex="1"
-        ref={wrapperRef}
-      >
+      <AtomBox display="flex" flexDirection="column" flexWrap="nowrap" position="relative" zIndex="1" ref={wrapperRef}>
         <AtomBox
           as="label"
           className={SwapCSS.inputContainerVariants({
@@ -66,6 +58,7 @@ export function CurrencyInputPanelSimplify({
             position="relative"
             style={{ height: 80 }}
           >
+            {inputLeft}
             <NumericalInput
               error={Boolean(error)}
               disabled={disabled}
@@ -81,7 +74,6 @@ export function CurrencyInputPanelSimplify({
               fontSize={inputFontSize}
               padding={bottom ? "0 0 16px" : undefined}
             />
-            {inputLeft}
           </AtomBox>
           {bottom}
         </AtomBox>

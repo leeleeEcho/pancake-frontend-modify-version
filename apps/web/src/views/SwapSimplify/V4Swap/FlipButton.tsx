@@ -20,6 +20,8 @@ import { useAllowRecipient } from '../../Swap/V3Swap/hooks'
 import ArrowDark from '../../../../public/images/swap/arrow_dark.json' assert { type: 'json' }
 import ArrowLight from '../../../../public/images/swap/arrow_light.json' assert { type: 'json' }
 
+import cs from './FilpButton.module.scss'
+
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 const switchAnimation = keyframes`
@@ -83,7 +85,7 @@ export const FlipButton = memo(function FlipButton() {
       <AutoRow justify="center" style={{ padding: '0 1rem', marginTop: '1em' }}>
         {isDesktop ? (
           <FlipButtonWrapper ref={flipButtonRef} onAnimationEnd={handleAnimationEnd}>
-            <Lottie
+            {/* <Lottie
               lottieRef={lottieRef}
               animationData={animationData}
               style={{ height: '40px', cursor: 'pointer' }}
@@ -95,6 +97,12 @@ export const FlipButton = memo(function FlipButton() {
                 handleAnimationEnd()
                 lottieRef.current?.playSegments([39, 54], true)
               }}
+            /> */}
+            <img
+              className={cs.turn}
+              src="/ztd/trade/icon-zhuanhuan@2x.png"
+              alt="turn"
+              onClick={handleAnimatedButtonClick}
             />
           </FlipButtonWrapper>
         ) : (

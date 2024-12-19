@@ -1,0 +1,29 @@
+.cloud {
+  position: absolute;
+  pointer-events: none;
+  &.c1 {
+    width: 430px;
+    left: 0;
+    top: 560px;
+  }
+  &.c2 {
+    width: 232px;
+    left: 0;
+    top: 400px;
+  }
+  &.c3 {
+    width: 460px;
+    right: 0;
+    top: 660px;
+  }
+  &.c4 {
+    width: 300px;
+    right: 0;
+    top: 160px;
+  }
+  &.c5 {
+    width: 160px;
+    right: 0;
+    top: 220px;
+  }
+}

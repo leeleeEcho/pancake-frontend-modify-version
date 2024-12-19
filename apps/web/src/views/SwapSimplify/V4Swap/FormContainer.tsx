@@ -1,5 +1,5 @@
 import { Column } from '@pancakeswap/uikit'
-import { PropsWithChildren, memo } from 'react'
+import { memo, PropsWithChildren } from 'react'
 
 import { SwapUIV2 } from '@pancakeswap/widgets-internal'
 

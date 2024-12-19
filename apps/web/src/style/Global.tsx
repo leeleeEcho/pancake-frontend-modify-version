@@ -11,6 +11,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Kumbh Sans', 'Kanit', sans-serif;
     --colors-primary: #FFC402;
     --colors-secondary:#FFC402;
+    --colors-background: #000000;
+    --colors-gradientBubblegum:url('/ztd/trade/bg_trade_swap.jpg');
+    --colors-textSubtle: #f0f0f0;
+    --colors-input: none;
+    --colors-inputSecondary: none;
+    --colors-primary60: #f0f0f0;
   }
 
   html {

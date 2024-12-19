@@ -18,9 +18,9 @@ export const InputPanelWrapper = styled(Flex)`
   justify-content: flex-start;
   padding: 1rem;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
-  border-radius: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  /* background-color: ${({ theme }) => theme.colors.backgroundAlt}; */
+  /* border-radius: 24px; */
+  /* border: 1px solid ${({ theme }) => theme.colors.cardBorder}; */
 `;
 
 export const SwapTabAndInputPanelWrapper = styled(Flex)`

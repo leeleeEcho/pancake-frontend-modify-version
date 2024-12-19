@@ -30,9 +30,8 @@ const SwapSelectionWrapper = styled.div`
   width: 100%;
   gap: 4px;
   padding: 16px;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
-  border-radius: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background-color: rgba(255, 196, 2, 0.05);
+  border-radius: 8px 8px 0px 0px;
   ${({ theme }) => theme.mediaQueries.md} {
     gap: 16px;
   }
@@ -103,7 +102,9 @@ export const SwapSelection = ({
         noButtonMargin
         fullWidth
       >
-        <StyledButtonMenuItem>{t('Swap')}</StyledButtonMenuItem>
+        <StyledButtonMenuItem style={{ color: '#FFC402', backgroundColor: 'transparent' }}>
+          {t('Swap')}
+        </StyledButtonMenuItem>
         <StyledButtonMenuItem {...tSwapProps}>{t('TWAP')}</StyledButtonMenuItem>
         <StyledButtonMenuItem {...tSwapProps}>{t('Limit')}</StyledButtonMenuItem>
       </ButtonMenu>

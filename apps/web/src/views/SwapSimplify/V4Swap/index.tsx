@@ -31,6 +31,8 @@ import { SwapSelection } from './SwapSelectionTab'
 import { TradeDetails } from './TradeDetails'
 import { TradingFee } from './TradingFee'
 
+import cs from './index.module.scss'
+
 export function V4SwapForm() {
   const {
     betterOrder,
@@ -127,70 +129,76 @@ export function V4SwapForm() {
 
   return (
     <SwapUIV2.SwapFormWrapper>
-      <SwapUIV2.SwapTabAndInputPanelWrapper>
-        <SwapSelection swapType={SwapType.MARKET} withToolkit />
-        <FormMain
-          tradeLoading={!tradeLoaded}
-          inputAmount={bestOrder?.trade?.inputAmount}
-          outputAmount={bestOrder?.trade?.outputAmount}
+      <div className={cs.box}>
+        <SwapUIV2.SwapTabAndInputPanelWrapper>
+          {/* bar */}
+
+          <SwapSelection swapType={SwapType.MARKET} withToolkit />
+          <FormMain
+            tradeLoading={!tradeLoaded}
+            inputAmount={bestOrder?.trade?.inputAmount}
+            outputAmount={bestOrder?.trade?.outputAmount}
+            swapCommitButton={
+              <CommitButton order={bestOrder} tradeLoaded={tradeLoaded} tradeError={tradeError} {...commitHooks} />
+            }
+            isUserInsufficientBalance={isUserInsufficientBalance}
+          />
+        </SwapUIV2.SwapTabAndInputPanelWrapper>
+        {shouldShowBuyCrypto && <BuyCryptoPanel link={buyCryptoLink} />}
+        {(shouldRiskPanelDisplay || isPriceImpactTooHigh || isSlippageTooHigh) && (
+          <RiskDetailsPanel
+            isPriceImpactTooHigh={isPriceImpactTooHigh}
+            isSlippageTooHigh={isSlippageTooHigh}
+            token0={inputCurrency?.wrapped}
+            token1={outputCurrency?.wrapped}
+            token0RiskLevelDescription={token0Risk.data?.riskLevelDescription}
+            token1RiskLevelDescription={token1Risk.data?.riskLevelDescription}
+          />
+        )}
+
+        {/* submit btn */}
+        <ButtonAndDetailsPanel
           swapCommitButton={
             <CommitButton order={bestOrder} tradeLoaded={tradeLoaded} tradeError={tradeError} {...commitHooks} />
           }
-          isUserInsufficientBalance={isUserInsufficientBalance}
-        />
-      </SwapUIV2.SwapTabAndInputPanelWrapper>
-      {shouldShowBuyCrypto && <BuyCryptoPanel link={buyCryptoLink} />}
-      {(shouldRiskPanelDisplay || isPriceImpactTooHigh || isSlippageTooHigh) && (
-        <RiskDetailsPanel
-          isPriceImpactTooHigh={isPriceImpactTooHigh}
-          isSlippageTooHigh={isSlippageTooHigh}
-          token0={inputCurrency?.wrapped}
-          token1={outputCurrency?.wrapped}
-          token0RiskLevelDescription={token0Risk.data?.riskLevelDescription}
-          token1RiskLevelDescription={token1Risk.data?.riskLevelDescription}
-        />
-      )}
-      <ButtonAndDetailsPanel
-        swapCommitButton={
-          <CommitButton order={bestOrder} tradeLoaded={tradeLoaded} tradeError={tradeError} {...commitHooks} />
-        }
-        pricingAndSlippage={
-          <FlexGap
-            alignItems="center"
-            flexWrap="wrap"
-            justifyContent="space-between"
-            width="calc(100% - 20px)"
-            gap="8px"
-          >
+          pricingAndSlippage={
             <FlexGap
-              onClick={(e) => {
-                e.stopPropagation()
-              }}
               alignItems="center"
               flexWrap="wrap"
+              justifyContent="space-between"
+              width="calc(100% - 20px)"
+              gap="8px"
             >
-              <RefreshButton
-                onRefresh={refreshOrder}
-                refreshDisabled={refreshDisabled}
-                chainId={activeChianId}
-                loading={!tradeLoaded}
-              />
-              <PricingAndSlippage
-                priceLoading={!tradeLoaded}
-                price={executionPrice ?? undefined}
-                showSlippage={false}
-              />
+              <FlexGap
+                onClick={(e) => {
+                  e.stopPropagation()
+                }}
+                alignItems="center"
+                flexWrap="wrap"
+              >
+                <RefreshButton
+                  onRefresh={refreshOrder}
+                  refreshDisabled={refreshDisabled}
+                  chainId={activeChianId}
+                  loading={!tradeLoaded}
+                />
+                <PricingAndSlippage
+                  priceLoading={!tradeLoaded}
+                  price={executionPrice ?? undefined}
+                  showSlippage={false}
+                />
+              </FlexGap>
+              <TradingFee loaded={tradeLoaded} order={bestOrder} />
             </FlexGap>
-            <TradingFee loaded={tradeLoaded} order={bestOrder} />
-          </FlexGap>
-        }
-        tradeDetails={<TradeDetails loaded={tradeLoaded} order={bestOrder} />}
-        shouldRenderDetails={Boolean(executionPrice) && Boolean(bestOrder) && !isWrapping && !tradeError}
-        mevSlot={<MevToggle />}
-        gasTokenSelector={
-          isPaymasterAvailable && <GasTokenSelector mt="8px" inputCurrency={inputCurrency || undefined} />
-        }
-      />
+          }
+          tradeDetails={<TradeDetails loaded={tradeLoaded} order={bestOrder} />}
+          shouldRenderDetails={Boolean(executionPrice) && Boolean(bestOrder) && !isWrapping && !tradeError}
+          mevSlot={<MevToggle />}
+          gasTokenSelector={
+            isPaymasterAvailable && <GasTokenSelector mt="8px" inputCurrency={inputCurrency || undefined} />
+          }
+        />
+      </div>
     </SwapUIV2.SwapFormWrapper>
   )
 }

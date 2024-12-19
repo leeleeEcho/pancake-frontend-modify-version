@@ -15,11 +15,14 @@ import { StyledSwapContainer } from '../Swap/styles'
 import { SwapFeaturesContext } from '../Swap/SwapFeaturesContext'
 import { V4SwapForm } from './V4Swap'
 
+import classNames from 'classnames'
+import cs from './index.module.scss'
+
 const Wrapper = styled(Box)`
   width: 100%;
   ${({ theme }) => theme.mediaQueries.md} {
-    min-width: 328px;
-    max-width: 480px;
+    min-width: 618px;
+    max-width: 618px;
   }
 `
 
@@ -72,6 +75,12 @@ export default function V4Swap() {
 
   return (
     <Page removePadding hideFooterOnDesktop={isChartExpanded || false} showExternalLink={false} showHelpLink={false}>
+      <img className={classNames(cs.cloud, cs.c1)} src="/ztd/trade/c1.png" />
+      <img className={classNames(cs.cloud, cs.c2)} src="/ztd/trade/c2.png" />
+      <img className={classNames(cs.cloud, cs.c3)} src="/ztd/trade/c3.png" />
+      <img className={classNames(cs.cloud, cs.c4)} src="/ztd/trade/c4.png" />
+      <img className={classNames(cs.cloud, cs.c5)} src="/ztd/trade/c5.png" />
+
       <Flex
         width="100%"
         height="100%"

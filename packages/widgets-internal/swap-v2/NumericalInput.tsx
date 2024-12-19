@@ -70,7 +70,7 @@ export const NumericalInput = memo(function InnerInput({
       minLength={1}
       maxLength={79}
       spellCheck="false"
-      style={{ fontWeight: 600, fontSize: fontSize ?? "24px", padding }}
+      style={{ fontWeight: 600, fontSize: fontSize ?? "24px", padding, textAlign: "left" }}
       ref={inputRef}
     />
   );

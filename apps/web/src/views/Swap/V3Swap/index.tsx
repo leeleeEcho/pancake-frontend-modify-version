@@ -1,9 +1,9 @@
+import { OrderType } from '@pancakeswap/price-api-sdk'
 import { SmartRouter } from '@pancakeswap/smart-router/evm'
 import { useMemo } from 'react'
-import { OrderType } from '@pancakeswap/price-api-sdk'
 
-import { logger } from 'utils/datadog'
 import { useCurrencyUsdPrice } from 'hooks/useCurrencyUsdPrice'
+import { logger } from 'utils/datadog'
 
 import { BuyCryptoLink, FormHeader, FormMain, PricingAndSlippage, TradeDetails } from './containers'
 import { CommitButton } from './containers/CommitButton'

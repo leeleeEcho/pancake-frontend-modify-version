@@ -9,12 +9,12 @@ import { useSwapHotTokenDisplay } from 'hooks/useSwapHotTokenDisplay'
 import { Field } from 'state/swap/actions'
 import { useSingleTokenSwapInfo, useSwapState } from 'state/swap/hooks'
 import Page from '../Page'
-import { SwapFeaturesContext } from './SwapFeaturesContext'
-import { V3SwapForm } from './V3Swap'
 import PriceChartContainer from './components/Chart/PriceChartContainer'
 import { SwapSelection } from './components/SwapSelection'
 import { StyledInputCurrencyWrapper, StyledSwapContainer } from './styles'
+import { SwapFeaturesContext } from './SwapFeaturesContext'
 import { SwapType } from './types'
+import { V3SwapForm } from './V3Swap'
 
 export default function Swap() {
   const { query } = useRouter()
