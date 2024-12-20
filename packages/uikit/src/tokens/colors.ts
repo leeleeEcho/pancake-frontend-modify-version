@@ -26,8 +26,8 @@ export const additionalColors = {
 export const lightColors = {
   ...baseColors,
   ...additionalColors,
-  secondary: "#7645D9",
-  secondary80: "#7645D980",
+  secondary: "#FFC402",
+  secondary80: "#FFC40280",
   background: "#FAF9FA",
   backgroundDisabled: "#E9EAEB",
   backgroundAlt: "#FFFFFF",
@@ -59,7 +59,7 @@ export const lightColors = {
   destructive20: "#FED2E8",
   destructive60: "#D14293",
   destructive: "#ED4B9E",
-  gradientPrimary: "linear-gradient(228.54deg, #1FC7D4 -13.69%, #7645D9 91.33%)",
+  gradientPrimary: "linear-gradient(228.54deg, #1FC7D4 -13.69%, #FFC402 91.33%)",
   gradientBubblegum: "linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)",
   gradientInverseBubblegum: "linear-gradient(139.73deg, #F3EFFF 0%, #E5FDFF 100%)",
   gradientCardHeader: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
@@ -67,7 +67,7 @@ export const lightColors = {
   gradientViolet: "linear-gradient(180deg, #E2C9FB 0%, #CDB8FA 100%)",
   gradientVioletAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
   gradientGold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
-  gradientBold: "linear-gradient(#53DEE9, #7645D9)",
+  gradientBold: "linear-gradient(#53DEE9, #FFC402)",
 };
 
 export const darkColors = {

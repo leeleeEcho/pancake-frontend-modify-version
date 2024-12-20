@@ -1,20 +1,16 @@
 import { ContextApi } from '@pancakeswap/localization'
-import { SUPPORTED_CHAIN_IDS as POOL_SUPPORTED_CHAINS } from '@pancakeswap/pools'
-import { SUPPORTED_CHAIN_IDS as POSITION_MANAGERS_SUPPORTED_CHAINS } from '@pancakeswap/position-managers'
 import { SUPPORTED_CHAIN_IDS as PREDICTION_SUPPORTED_CHAINS } from '@pancakeswap/prediction'
 import {
   BridgeIcon,
   DropdownMenuItems,
   DropdownMenuItemType,
-  EarnFillIcon,
-  EarnIcon,
   GameIcon,
   MenuItemsType,
   MoreIcon,
   SwapFillIcon,
   SwapIcon,
 } from '@pancakeswap/uikit'
-import { SUPPORT_CAKE_STAKING, SUPPORT_FARMS, SUPPORT_ONLY_BSC } from 'config/constants/supportChains'
+import { SUPPORT_CAKE_STAKING, SUPPORT_ONLY_BSC } from 'config/constants/supportChains'
 import { getOptionsUrl } from 'utils/getOptionsUrl'
 import { getPerpetualUrl } from 'utils/getPerpetualUrl'
 
@@ -83,63 +79,63 @@ const config: (
         },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    {
-      label: t('Earn'),
-      href: '/liquidity/pools',
-      icon: EarnIcon,
-      fillIcon: EarnFillIcon,
-      image: '/images/decorations/pe2.png',
-      supportChainIds: SUPPORT_FARMS,
-      overrideSubNavItems: [
-        {
-          label: t('Farm / Liquidity'),
-          href: '/liquidity/pools',
-          supportChainIds: SUPPORT_FARMS,
-        },
-        {
-          label: t('Position Manager'),
-          href: '/position-managers',
-          supportChainIds: POSITION_MANAGERS_SUPPORTED_CHAINS,
-        },
-        {
-          label: t('CAKE Staking'),
-          href: '/cake-staking',
-          supportChainIds: SUPPORT_CAKE_STAKING,
-        },
-        {
-          label: t('Syrup Pools'),
-          href: '/pools',
-          supportChainIds: POOL_SUPPORTED_CHAINS,
-        },
-      ].map((item) => addMenuItemSupported(item, chainId)),
-      items: [
-        {
-          label: t('Farm / Liquidity'),
-          href: '/liquidity/pools',
-          matchHrefs: ['/liquidity/positions', '/farms'],
-          supportChainIds: SUPPORT_FARMS,
-        },
-        {
-          label: t('Position Manager'),
-          href: '/position-managers',
-          supportChainIds: POSITION_MANAGERS_SUPPORTED_CHAINS,
-        },
-        {
-          label: t('Staking'),
-          items: [
-            {
-              label: t('CAKE Staking'),
-              href: '/cake-staking',
-            },
-            {
-              label: t('Syrup Pools'),
-              href: '/pools',
-              supportChainIds: POOL_SUPPORTED_CHAINS,
-            },
-          ].map((item) => addMenuItemSupported(item, chainId)),
-        },
-      ].map((item) => addMenuItemSupported(item, chainId)),
-    },
+    // {
+    //   label: t('Earn'),
+    //   href: '/liquidity/pools',
+    //   icon: EarnIcon,
+    //   fillIcon: EarnFillIcon,
+    //   image: '/images/decorations/pe2.png',
+    //   supportChainIds: SUPPORT_FARMS,
+    //   overrideSubNavItems: [
+    //     {
+    //       label: t('Farm / Liquidity'),
+    //       href: '/liquidity/pools',
+    //       supportChainIds: SUPPORT_FARMS,
+    //     },
+    //     {
+    //       label: t('Position Manager'),
+    //       href: '/position-managers',
+    //       supportChainIds: POSITION_MANAGERS_SUPPORTED_CHAINS,
+    //     },
+    //     {
+    //       label: t('CAKE Staking'),
+    //       href: '/cake-staking',
+    //       supportChainIds: SUPPORT_CAKE_STAKING,
+    //     },
+    //     {
+    //       label: t('Syrup Pools'),
+    //       href: '/pools',
+    //       supportChainIds: POOL_SUPPORTED_CHAINS,
+    //     },
+    //   ].map((item) => addMenuItemSupported(item, chainId)),
+    //   items: [
+    //     {
+    //       label: t('Farm / Liquidity'),
+    //       href: '/liquidity/pools',
+    //       matchHrefs: ['/liquidity/positions', '/farms'],
+    //       supportChainIds: SUPPORT_FARMS,
+    //     },
+    //     {
+    //       label: t('Position Manager'),
+    //       href: '/position-managers',
+    //       supportChainIds: POSITION_MANAGERS_SUPPORTED_CHAINS,
+    //     },
+    //     {
+    //       label: t('Staking'),
+    //       items: [
+    //         {
+    //           label: t('CAKE Staking'),
+    //           href: '/cake-staking',
+    //         },
+    //         {
+    //           label: t('Syrup Pools'),
+    //           href: '/pools',
+    //           supportChainIds: POOL_SUPPORTED_CHAINS,
+    //         },
+    //       ].map((item) => addMenuItemSupported(item, chainId)),
+    //     },
+    //   ].map((item) => addMenuItemSupported(item, chainId)),
+    // },
     {
       label: t('Bridge'),
       href: 'https://bridge.pancakeswap.finance',

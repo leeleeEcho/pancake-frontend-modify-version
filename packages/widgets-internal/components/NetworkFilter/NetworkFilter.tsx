@@ -1,4 +1,4 @@
-import { MultiSelect, IMultiSelectChangeEvent, IMultiSelectProps } from "@pancakeswap/uikit";
+import { IMultiSelectChangeEvent, IMultiSelectProps, MultiSelect } from "@pancakeswap/uikit";
 import { useCallback, useState } from "react";
 import styled from "styled-components";
 
@@ -29,7 +29,7 @@ const Container = styled.div<{ $isShow: boolean }>`
   && .select-input-container {
      border: 1px solid ${theme.colors.secondary};
      border-bottom: 1px solid ${theme.colors.inputSecondary};
-     box-shadow: -2px -2px 2px 2px #7645D933, 2px -2px 2px 2px #7645D933;
+     box-shadow: -2px -2px 2px 2px #FFC40233, 2px -2px 2px 2px #FFC40233;
      border-bottom-left-radius: 0;
      border-bottom-right-radius: 0;
   }
@@ -37,7 +37,7 @@ const Container = styled.div<{ $isShow: boolean }>`
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border: 1px solid ${theme.colors.secondary};
-    box-shadow: 2px 2px 2px 2px #7645D933, -2px 2px 2px 2px #7645D933;
+    box-shadow: 2px 2px 2px 2px #FFC40233, -2px 2px 2px 2px #FFC40233;
     border-top: none;
   }
  `}

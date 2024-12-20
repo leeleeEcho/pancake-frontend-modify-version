@@ -5,9 +5,9 @@ import Page from 'components/Layout/Page'
 import { useRouter } from 'next/router'
 import { PropsWithChildren, useMemo } from 'react'
 import styled from 'styled-components'
-import { PoolsBanner } from './components'
 import { PoolsPage } from './PoolsPage'
 import { PositionPage } from './PositionPage'
+import cs from './UniversalFarms.module.scss'
 
 const StyledTab = styled(Tab)`
   padding: 0;
@@ -96,7 +96,8 @@ export const UniversalFarms: React.FC<PropsWithChildren> = () => {
 
   return (
     <>
-      <PoolsBanner additionLink={<LegacyPage />} />
+      {/* <PoolsBanner additionLink={<LegacyPage />} /> */}
+      <img className={cs.top} src="/ztd/explorer/top-img.png" />
       <Page>
         <TabMenu gap="8px" activeIndex={tabIdx} isShowBorderBottom={false}>
           {Object.values(tabsConfig).map(({ menu }) => menu())}

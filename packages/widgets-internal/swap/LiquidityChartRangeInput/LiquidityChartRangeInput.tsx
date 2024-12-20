@@ -11,7 +11,7 @@ import { styled, useTheme } from "styled-components";
 import { Chart } from "./Chart";
 import { InfoBox } from "./InfoBox";
 import Loader from "./Loader";
-import { Bound, ChartEntry, TickDataRaw, ZOOM_LEVELS, ZoomLevels } from "./types";
+import { Bound, ChartEntry, TickDataRaw, ZoomLevels, ZOOM_LEVELS } from "./types";
 
 const ChartWrapper = styled.div`
   position: relative;
@@ -66,8 +66,8 @@ export function LiquidityChartRangeInput({
   const theme = useTheme();
 
   // Get token color
-  const tokenAColor = "#7645D9";
-  const tokenBColor = "#7645D9";
+  const tokenAColor = "#FFC402";
+  const tokenBColor = "#FFC402";
 
   const isSorted = useMemo(
     () => currencyA && currencyB && currencyA?.wrapped.sortsBefore(currencyB?.wrapped),

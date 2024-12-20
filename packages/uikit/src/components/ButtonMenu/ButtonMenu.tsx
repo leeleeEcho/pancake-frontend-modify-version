@@ -20,13 +20,14 @@ const StyledButtonMenu = styled.div.withConfig({
   shouldForwardProp: (props) => !["fullWidth"].includes(props),
 })<StyledButtonMenuProps>`
   ${(props) => {
-    if (props.variant === variants.TEXT) {
-      return "";
-    }
-    return `
-    background-color: ${getBackgroundColor(props)};
-    border: 1px solid ${getBorderColor(props)};
-    `;
+    return "";
+    // if (props.variant === variants.TEXT) {
+    //   return "";
+    // }
+    // return `
+    // background-color: ${getBackgroundColor(props)};
+    // border: 1px solid ${getBorderColor(props)};
+    // `;
   }}
   border-radius: 16px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};

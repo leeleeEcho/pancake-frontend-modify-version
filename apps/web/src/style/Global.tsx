@@ -14,9 +14,10 @@ const GlobalStyle = createGlobalStyle`
     --colors-background: #000000;
     --colors-gradientBubblegum:url('/ztd/trade/bg_trade_swap.jpg');
     --colors-textSubtle: #f0f0f0;
-    --colors-input: none;
-    --colors-inputSecondary: none;
+    --colors-input: #222;
+    /* --colors-inputSecondary: none; */
     --colors-primary60: #f0f0f0;
+    --colors-success: #FFC402;
   }
 
   html {

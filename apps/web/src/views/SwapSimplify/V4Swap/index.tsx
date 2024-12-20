@@ -132,7 +132,6 @@ export function V4SwapForm() {
       <div className={cs.box}>
         <SwapUIV2.SwapTabAndInputPanelWrapper>
           {/* bar */}
-
           <SwapSelection swapType={SwapType.MARKET} withToolkit />
           <FormMain
             tradeLoading={!tradeLoaded}

@@ -15,9 +15,9 @@ import Input from "../../components/Input/Input";
 import { CogIcon, LanguageCurrencyIcon } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import { BottomDrawer, Modal, ModalProps, useModal } from "../Modal";
-import Menu from "./Menu";
 import UserMenu from "./components/UserMenu";
 import { Variant, variants } from "./components/UserMenu/types";
+import Menu from "./Menu";
 import { links, userMenulinks } from "./testConfig";
 import { NavProps } from "./types";
 
@@ -180,7 +180,7 @@ export const ConnectedWithBanner = ConnectedTemplate.bind({});
 ConnectedWithBanner.args = {
   ...defaultProps,
   banner: (
-    <Flex height="100%" p="16px" alignItems="center" justifyContent="center" background="#7645D9">
+    <Flex height="100%" p="16px" alignItems="center" justifyContent="center" background="#FFC402">
       <Text color="invertedContrast" mr="8px">
         Banner example
       </Text>

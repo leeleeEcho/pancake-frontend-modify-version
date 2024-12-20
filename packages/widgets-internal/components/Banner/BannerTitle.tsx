@@ -1,4 +1,4 @@
-import { Text, TextProps, breakpoints } from "@pancakeswap/uikit";
+import { breakpoints, Text, TextProps } from "@pancakeswap/uikit";
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
@@ -39,7 +39,7 @@ const variants: { [key in VariantTypes]: Variant } = {
     fontWeight: 800,
   },
   purple: {
-    color: "#7645D9",
+    color: "#FFC402",
     strokeColor: "#ffffff",
     strokeSize: 2,
     fontSize: 28,
@@ -56,7 +56,7 @@ const variants: { [key in VariantTypes]: Variant } = {
   },
   yellow: {
     color: "#FFB237",
-    strokeColor: "#7645D9",
+    strokeColor: "#FFC402",
     strokeSize: 2,
     fontSize: 28,
     lineHeight: 30,

@@ -1,9 +1,9 @@
+import { useTheme } from "@pancakeswap/hooks";
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
-import { useTheme } from "@pancakeswap/hooks";
-import { IOptionType, ISelectItem } from "./types";
 import { Box, Flex } from "../Box";
 import { CrossIcon } from "../Svg";
+import { IOptionType, ISelectItem } from "./types";
 
 export const BORDER_RADIUS = "16px";
 
@@ -21,7 +21,7 @@ const StyledBox = styled(Box)<{ isFocus: boolean }>`
   margin: 16px;
   padding: 5px 8px;
   min-height: 42px;
-  ${({ isFocus }) => isFocus && `box-shadow: 0px 0px 0px 4px #7645D933, 0px 0px 0px 1px #7645D9;`}
+  ${({ isFocus }) => isFocus && `box-shadow: 0px 0px 0px 4px #FFC40233, 0px 0px 0px 1px #FFC402;`}
 `;
 
 const LabelsContainer = styled(Flex)`

@@ -77,6 +77,7 @@ const SelectContainer = styled.div`
     display: inline-flex;
     user-select: none;
     vertical-align: bottom;
+    border-radius: 4px;
     width: ${CHECKBOX_WIDTH};
     height: ${CHECKBOX_WIDTH};
 

@@ -132,8 +132,8 @@ export function FormMain({ inputAmount, outputAmount, tradeLoading, isUserInsuff
         otherCurrency={outputCurrency}
         commonBasesType={CommonBasesType.SWAP_LIMITORDER}
         title={
-          <Text color="textSubtle" fontSize={12} bold>
-            {t('From')}
+          <Text color="textSubtle" fontSize={14} bold>
+            You pay
           </Text>
         }
         isUserInsufficientBalance={isUserInsufficientBalance}
@@ -154,8 +154,8 @@ export function FormMain({ inputAmount, outputAmount, tradeLoading, isUserInsuff
         otherCurrency={inputCurrency}
         commonBasesType={CommonBasesType.SWAP_LIMITORDER}
         title={
-          <Text color="textSubtle" fontSize={12} bold>
-            {t('To')}
+          <Text color="textSubtle" fontSize={14} bold>
+            You receive
           </Text>
         }
       />

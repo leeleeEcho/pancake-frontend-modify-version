@@ -9,9 +9,9 @@ import {
   ScanLink,
   Skeleton,
   Text,
-  VerifiedIcon,
   useMatchBreakpoints,
   useModalV2,
+  VerifiedIcon,
 } from '@pancakeswap/uikit'
 import { FarmWidget } from '@pancakeswap/widgets-internal'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -29,11 +29,11 @@ import { useMerklUserLink } from 'utils/getMerklLink'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 import { AddLiquidityV3Modal } from 'views/AddLiquidityV3/Modal'
 import { SELECTOR_TYPE } from 'views/AddLiquidityV3/types'
-import { V2Farm } from 'views/Farms/FarmsV3'
 import { StatusView } from 'views/Farms/components/YieldBooster/components/bCakeV3/StatusView'
 import { StatusViewButtons } from 'views/Farms/components/YieldBooster/components/bCakeV3/StatusViewButtons'
 import { useBCakeBoostLimitAndLockInfo } from 'views/Farms/components/YieldBooster/hooks/bCakeV3/useBCakeV3Info'
 import { useBoostStatusPM } from 'views/Farms/components/YieldBooster/hooks/bCakeV3/useBoostStatus'
+import { V2Farm } from 'views/Farms/FarmsV3'
 import { useWrapperBooster } from 'views/PositionManagers/hooks'
 import { useAccount } from 'wagmi'
 import { useUpdateBCakeFarms } from '../../../hooks/useUpdateBCake'
@@ -197,8 +197,8 @@ const MerklWarning: React.FC<{
 }> = ({ merklLink, hasFarm, merklUserLink }) => {
   return (
     <StyleMerklWarning>
-      <Message variant="primary" icon={<VerifiedIcon color="#7645D9" />}>
-        <MessageText color="#7645D9">
+      <Message variant="primary" icon={<VerifiedIcon color="#FFC402" />}>
+        <MessageText color="#FFC402">
           <MerklNotice.Content
             hasFarm={hasFarm}
             merklLink={merklLink}
