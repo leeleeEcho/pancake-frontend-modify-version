@@ -1,9 +1,9 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Flex, LightBulbIcon, StyledLink, Text, useTooltip } from '@pancakeswap/uikit'
-import { FarmTransactionStatus, CrossChainFarmStepType } from 'state/transactions/actions'
+import NextLink from 'next/link'
+import { CrossChainFarmStepType, FarmTransactionStatus } from 'state/transactions/actions'
 import { TransactionDetails } from 'state/transactions/reducer'
 import { styled } from 'styled-components'
-import NextLink from 'next/link'
 
 const ListStyle = styled.div`
   position: relative;

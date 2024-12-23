@@ -11,8 +11,8 @@ import { Native, Token, WNATIVE } from '@pancakeswap/sdk'
 import { ChainLogo, CurrencyLogo } from '@pancakeswap/widgets-internal'
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { Address } from 'viem'
 import { isAddressEqual } from 'utils'
+import { Address } from 'viem'
 
 const StyledDualLogo = styled.div`
   display: flex;

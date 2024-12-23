@@ -4,7 +4,7 @@ import { useCurrentBlock } from 'hooks/useCurrentBlockTimestamp'
 import { useWorker } from 'hooks/useWorker'
 import { useAtom } from 'jotai'
 import { useEffect, useMemo, useRef } from 'react'
-import { MulticallState, multicallReducerAtom } from 'state/multicall/reducer'
+import { multicallReducerAtom, MulticallState } from 'state/multicall/reducer'
 
 import { useMulticallContract } from 'hooks/useContract'
 import {

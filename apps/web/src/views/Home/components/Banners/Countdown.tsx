@@ -1,7 +1,7 @@
-import { Box, useMatchBreakpoints } from '@pancakeswap/uikit'
-import styled from 'styled-components'
 import { useCountdown } from '@pancakeswap/hooks'
 import { useTranslation } from '@pancakeswap/localization'
+import { Box, useMatchBreakpoints } from '@pancakeswap/uikit'
+import styled from 'styled-components'
 
 const CountDownWrapper = styled.div`
   display: flex;

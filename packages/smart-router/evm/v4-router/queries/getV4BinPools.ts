@@ -1,12 +1,12 @@
-import { Currency, getCurrencyAddress, sortCurrencies } from '@pancakeswap/swap-sdk-core'
-import { BinPoolManager, PoolKey, getPoolId } from '@pancakeswap/v4-sdk'
 import { Native } from '@pancakeswap/sdk'
+import { Currency, getCurrencyAddress, sortCurrencies } from '@pancakeswap/swap-sdk-core'
+import { BinPoolManager, getPoolId, PoolKey } from '@pancakeswap/v4-sdk'
 import { Address } from 'viem'
 
 import { getPairCombinations } from '../../v3-router/functions'
-import { PoolType, V4BinPool } from '../../v3-router/types'
-import { PoolMeta } from '../../v3-router/providers/poolProviders/internalTypes'
 import { createOnChainPoolFactory } from '../../v3-router/providers'
+import { PoolMeta } from '../../v3-router/providers/poolProviders/internalTypes'
+import { PoolType, V4BinPool } from '../../v3-router/types'
 import { BIN_HOOKS, BIN_PRESETS } from '../constants'
 import { GetV4CandidatePoolsParams } from '../types'
 

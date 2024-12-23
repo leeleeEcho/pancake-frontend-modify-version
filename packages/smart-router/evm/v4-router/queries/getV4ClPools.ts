@@ -1,12 +1,12 @@
-import { Currency, getCurrencyAddress, sortCurrencies } from '@pancakeswap/swap-sdk-core'
-import { PoolKey, getPoolId, CLPoolManager } from '@pancakeswap/v4-sdk'
 import { Native } from '@pancakeswap/sdk'
+import { Currency, getCurrencyAddress, sortCurrencies } from '@pancakeswap/swap-sdk-core'
+import { CLPoolManager, getPoolId, PoolKey } from '@pancakeswap/v4-sdk'
 import { Address } from 'viem'
 
 import { getPairCombinations } from '../../v3-router/functions'
-import { PoolType, V4ClPool } from '../../v3-router/types'
-import { PoolMeta } from '../../v3-router/providers/poolProviders/internalTypes'
 import { createOnChainPoolFactory } from '../../v3-router/providers'
+import { PoolMeta } from '../../v3-router/providers/poolProviders/internalTypes'
+import { PoolType, V4ClPool } from '../../v3-router/types'
 import { CL_HOOKS, CL_PRESETS } from '../constants'
 import { GetV4CandidatePoolsParams } from '../types'
 

@@ -30,8 +30,8 @@ import { useWriteWithdrawCallback } from '../hooks/useContractWrite/useWriteWith
 import { useCurrentBlockTimestamp } from '../hooks/useCurrentBlockTimestamp'
 import { useProxyVeCakeBalance } from '../hooks/useProxyVeCakeBalance'
 import { useCakeLockStatus } from '../hooks/useVeCakeUserInfo'
-import { DebugTooltips, Tooltips } from './Tooltips'
 import { StyledLockedCard } from './styled'
+import { DebugTooltips, Tooltips } from './Tooltips'
 
 dayjs.extend(relativeTime)
 

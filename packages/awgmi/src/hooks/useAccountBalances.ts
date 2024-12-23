@@ -1,3 +1,4 @@
+import { GetAccountCoinsDataResponse, MoveStructId } from '@aptos-labs/ts-sdk'
 import { formatUnits } from '@ethersproject/units'
 import {
   CoinStoreResource,
@@ -9,10 +10,9 @@ import {
 } from '@pancakeswap/awgmi/core'
 import { useQuery, UseQueryResult } from '@tanstack/react-query'
 import { useCallback, useMemo } from 'react'
-import { GetAccountCoinsDataResponse, MoveStructId } from '@aptos-labs/ts-sdk'
 
 import { QueryConfig } from '../types'
-import { UseAccountResourcesArgs, UseAccountResourcesConfig, queryKey } from './useAccountResources'
+import { queryKey, UseAccountResourcesArgs, UseAccountResourcesConfig } from './useAccountResources'
 import { useCoins } from './useCoins'
 import { useNetwork } from './useNetwork'
 import { useV1CoinAssetTypes } from './useV1CoinAssetType'

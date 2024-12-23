@@ -14,10 +14,10 @@ import {
   Text,
 } from '@pancakeswap/uikit'
 import { ConfirmationPendingContent } from '@pancakeswap/widgets-internal'
+import { useActiveChainId } from 'hooks/useNetwork'
 import { useCallback } from 'react'
 import { styled } from 'styled-components'
 import { getBlockExploreLink } from 'utils'
-import { useActiveChainId } from 'hooks/useNetwork'
 
 const Wrapper = styled.div`
   width: 100%;

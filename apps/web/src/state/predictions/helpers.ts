@@ -1,11 +1,11 @@
 import { ChainId } from '@pancakeswap/chains'
 import {
+  aiPredictionsABI,
   BetPosition,
   PredictionStatus,
   PredictionSupportedSymbol,
-  ROUNDS_PER_PAGE,
-  aiPredictionsABI,
   predictionsV2ABI,
+  ROUNDS_PER_PAGE,
 } from '@pancakeswap/prediction'
 import { gql, request } from 'graphql-request'
 import {

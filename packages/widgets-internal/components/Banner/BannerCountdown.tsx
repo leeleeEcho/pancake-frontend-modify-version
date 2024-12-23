@@ -1,8 +1,8 @@
-import { memo, useMemo, CSSProperties, ReactNode } from "react";
-import styled from "styled-components";
-import { FlexGap, Text, useMatchBreakpoints, type TextProps } from "@pancakeswap/uikit";
-import { useTranslation } from "@pancakeswap/localization";
 import { useCountdown } from "@pancakeswap/hooks";
+import { useTranslation } from "@pancakeswap/localization";
+import { FlexGap, Text, useMatchBreakpoints, type TextProps } from "@pancakeswap/uikit";
+import { CSSProperties, memo, ReactNode, useMemo } from "react";
+import styled from "styled-components";
 
 type CountdownProps = {
   targetTimestamp: number;

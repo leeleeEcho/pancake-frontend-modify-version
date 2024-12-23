@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-import { Proposal, ProposalState } from 'state/types'
-import { gql } from 'graphql-request'
 import { SNAPSHOT_API } from 'config/constants/endpoints'
-import { ADMINS, PANCAKE_SPACE } from 'views/Voting/config'
+import { gql } from 'graphql-request'
+import { Proposal, ProposalState } from 'state/types'
 import { multiQuery } from 'utils/infoQueryHelpers'
+import { ADMINS, PANCAKE_SPACE } from 'views/Voting/config'
 
 type Proposals = Partial<{
   [key in ProposalState]: Proposal[]

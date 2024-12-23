@@ -1,14 +1,14 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Text, Progress, Tag } from '@pancakeswap/uikit'
+import { Flex, Progress, Tag, Text } from '@pancakeswap/uikit'
 import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { PoolIds } from 'config/constants/types'
+import dayjs from 'dayjs'
+import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
 import { useMemo } from 'react'
 import { styled } from 'styled-components'
 import { useGetPublicIfoData } from 'views/Ifos/hooks/v3/useGetPublicIfoData'
 import type { VestingData } from 'views/Ifos/hooks/vesting/useFetchUserWalletIfoData'
-import dayjs from 'dayjs'
-import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
 import Claim from './Claim'
 
 const WhiteCard = styled.div`

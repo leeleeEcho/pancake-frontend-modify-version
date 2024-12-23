@@ -7,10 +7,10 @@ import {
   Flex,
   HelpIcon,
   IconButton,
+  promotedGradient,
   RefreshIcon,
   Tag,
   Text,
-  promotedGradient,
   useTooltip,
 } from '@pancakeswap/uikit'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'

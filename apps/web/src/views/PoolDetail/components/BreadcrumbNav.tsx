@@ -1,7 +1,7 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Breadcrumbs, CopyButton, Flex, ScanLink, Text } from '@pancakeswap/uikit'
-import { ChainLinkSupportChains, multiChainId, multiChainScan } from 'state/info/constant'
 import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { ChainLinkSupportChains, multiChainId, multiChainScan } from 'state/info/constant'
 import { useChainNameByQuery } from 'state/info/hooks'
 import { getBlockExploreLink } from 'utils'
 import { usePoolSymbol } from '../hooks/usePoolSymbol'

@@ -18,14 +18,15 @@ import {
   ModalTitle,
   Row,
   Text,
-  WarningIcon,
   useMatchBreakpoints,
   useToast,
+  WarningIcon,
 } from '@pancakeswap/uikit'
 import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
 import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
 import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'
+import { WEEK } from 'config/constants/veCake'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { useCakePrice } from 'hooks/useCakePrice'
 import useCatchTxError from 'hooks/useCatchTxError'
@@ -34,10 +35,9 @@ import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { getRevenueSharingCakePoolAddress, getRevenueSharingVeCakeAddress } from 'utils/addressHelpers'
 import { stringify } from 'viem'
+import { poolStartWeekCursors } from 'views/CakeStaking/config'
 import BenefitsTooltipsText from 'views/Pools/components/RevenueSharing/BenefitsModal/BenefitsTooltipsText'
 import { timeFormat } from 'views/TradingReward/utils/timeFormat'
-import { poolStartWeekCursors } from 'views/CakeStaking/config'
-import { WEEK } from 'config/constants/veCake'
 import {
   useCakePoolEmission,
   useRevShareEmission,
@@ -47,8 +47,8 @@ import {
 } from '../hooks/useAPR'
 import { useCurrentBlockTimestamp } from '../hooks/useCurrentBlockTimestamp'
 import { useRevenueSharingCakePool, useRevenueSharingVeCake } from '../hooks/useRevenueSharingProxy'
-import { MyVeCakeCard } from './MyVeCakeCard'
 import { useCakeLockStatus } from '../hooks/useVeCakeUserInfo'
+import { MyVeCakeCard } from './MyVeCakeCard'
 
 const StyledModalHeader = styled(ModalHeader)`
   padding: 0;

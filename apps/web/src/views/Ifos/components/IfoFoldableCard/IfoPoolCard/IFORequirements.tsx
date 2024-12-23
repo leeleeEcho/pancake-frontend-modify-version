@@ -1,11 +1,11 @@
-import { useMemo } from 'react'
-import { Text, Flex, AccountIcon, TeamBattleIcon, Box, useTooltip, LinkExternal } from '@pancakeswap/uikit'
-import { useAccount } from 'wagmi'
 import { useTranslation } from '@pancakeswap/localization'
+import { AccountIcon, Box, Flex, LinkExternal, TeamBattleIcon, Text, useTooltip } from '@pancakeswap/uikit'
+import { useMemo } from 'react'
+import { useAccount } from 'wagmi'
 
+import TransWithElement from '../../TransWithElement'
 import OkNFTIcon from './Icons/OkNFT'
 import OkProfilePointsIcon from './Icons/OkProfilePoints'
-import TransWithElement from '../../TransWithElement'
 
 const NotOkNFT = ({ admissionProfile }) => {
   const { t } = useTranslation()

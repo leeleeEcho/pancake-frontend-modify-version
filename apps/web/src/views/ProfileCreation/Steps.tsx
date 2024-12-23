@@ -1,11 +1,11 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { useAccount } from 'wagmi'
+import useProfileCreation from './contexts/hook'
 import Mint from './Mint'
 import ProfilePicture from './ProfilePicture'
 import TeamSelection from './TeamSelection'
 import UserName from './UserName'
 import NoWalletConnected from './WalletNotConnected'
-import useProfileCreation from './contexts/hook'
 
 const Steps = () => {
   const { t } = useTranslation()

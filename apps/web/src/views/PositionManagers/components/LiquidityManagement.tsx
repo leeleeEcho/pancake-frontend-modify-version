@@ -199,7 +199,7 @@ export const LiquidityManagement = memo(function LiquidityManagement({
               }}
               style={{ borderLeft: dividerBorderStyle, borderTop: dividerBorderStyle }}
             />
-            {/* if (!isInCakeRewardDateRange && earningsBalance <= 0) return null  */}
+            {/* if (!isInCakeRewardDateRange && earningsBalance <= 0) return null;  */}
             <RowBetween flexDirection="column" alignItems="flex-start" flex={1} width="100%">
               <RewardAssets
                 contractAddress={contractAddress}

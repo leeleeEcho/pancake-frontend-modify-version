@@ -14,8 +14,6 @@ import { useWebNotifications } from 'hooks/useWebNotifications'
 import { useRouter } from 'next/router'
 import { lazy, Suspense, useCallback, useMemo } from 'react'
 import { getOptionsUrl } from 'utils/getOptionsUrl'
-import GlobalSettings from './GlobalSettings'
-import { SettingsMode } from './GlobalSettings/types'
 import { useMenuItems, UseMenuItemsParams } from './hooks/useMenuItems'
 import UserMenu from './UserMenu'
 import { getActiveMenuItem, getActiveSubMenuChildItem, getActiveSubMenuItem } from './utils'
@@ -108,7 +106,7 @@ const Menu = (props) => {
       linkComponent={LinkComponent}
       rightSide={
         <>
-          <GlobalSettings mode={SettingsMode.GLOBAL} />
+          {/* <GlobalSettings mode={SettingsMode.GLOBAL} /> */}
           {enabled && (
             <Suspense fallback={null}>
               <Notifications />

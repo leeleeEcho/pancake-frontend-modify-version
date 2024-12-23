@@ -1,17 +1,17 @@
 /* eslint-disable no-param-reassign */
-import { Pair, Trade, Currency, CurrencyAmount, Token, TradeType } from '@pancakeswap/aptos-swap-sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade, TradeType } from '@pancakeswap/aptos-swap-sdk'
 import flatMap from 'lodash/flatMap'
 import { useMemo } from 'react'
 
 import { useUserSingleHopOnly } from '@pancakeswap/utils/user'
 import {
-  BASES_TO_CHECK_TRADES_AGAINST,
-  CUSTOM_BASES,
-  BETTER_TRADE_LESS_HOPS_THRESHOLD,
   ADDITIONAL_BASES,
+  BASES_TO_CHECK_TRADES_AGAINST,
+  BETTER_TRADE_LESS_HOPS_THRESHOLD,
+  CUSTOM_BASES,
 } from 'config/constants/exchange'
-import { PairState, usePairs } from './usePairs'
 import { useActiveChainId } from './useNetwork'
+import { PairState, usePairs } from './usePairs'
 
 // import { useUnsupportedTokens, useWarningTokens } from './Tokens'
 function useUnsupportedTokens() {

@@ -7,9 +7,9 @@ import {
   Heading,
   IconButton,
   ScanLink,
+  useModal,
   VisibilityOff,
   VisibilityOn,
-  useModal,
 } from '@pancakeswap/uikit'
 import { formatNumber } from '@pancakeswap/utils/formatBalance'
 import truncateHash from '@pancakeswap/utils/truncateHash'

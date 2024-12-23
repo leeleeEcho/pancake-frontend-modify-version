@@ -14,10 +14,10 @@ import {
 import { CurrencyLogo } from '@pancakeswap/widgets-internal'
 import { LightGreyCard } from 'components/Card'
 
+import { ChainId } from '@pancakeswap/chains'
 import { Currency, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
 import { useMemo } from 'react'
 import { getMerklLink } from 'utils/getMerklLink'
-import { ChainId } from '@pancakeswap/chains'
 import useMerkl from '../../hooks/useMerkl'
 
 function TextWarning({ tokenAmount }: { tokenAmount: CurrencyAmount<Currency> }) {

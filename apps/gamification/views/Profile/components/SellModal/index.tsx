@@ -14,11 +14,11 @@ import EditStage from './EditStage'
 import RemoveStage from './RemoveStage'
 import SellStage from './SellStage'
 import SetPriceStage from './SetPriceStage'
-import TransferStage from './TransferStage'
 import ApproveAndConfirmStage from './shared/ApproveAndConfirmStage'
 import ConfirmStage from './shared/ConfirmStage'
 import TransactionConfirmed from './shared/TransactionConfirmed'
-import { StyledModal, stagesWithBackButton } from './styles'
+import { stagesWithBackButton, StyledModal } from './styles'
+import TransferStage from './TransferStage'
 import { SellingStage } from './types'
 
 export const modalTitles = (stage: SellingStage, t: ContextApi['t']) => {

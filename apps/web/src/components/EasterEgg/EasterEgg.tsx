@@ -1,6 +1,6 @@
-import { useState, useCallback, memo } from 'react'
 import { FallingBunniesProps, useKonamiCheatCode } from '@pancakeswap/uikit'
 import dynamic from 'next/dynamic'
+import { memo, useCallback, useState } from 'react'
 
 const FallingBunnies = dynamic<FallingBunniesProps>(
   () => import('@pancakeswap/uikit').then((mod) => mod.FallingBunnies),

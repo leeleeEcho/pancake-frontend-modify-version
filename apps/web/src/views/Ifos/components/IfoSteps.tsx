@@ -14,8 +14,8 @@ import {
   LogoRoundIcon,
   Skeleton,
   Step,
-  StepStatus,
   Stepper,
+  StepStatus,
   Text,
 } from '@pancakeswap/uikit'
 import { Ifo, NextLinkFromReactRouter as RouterLink } from '@pancakeswap/widgets-internal'

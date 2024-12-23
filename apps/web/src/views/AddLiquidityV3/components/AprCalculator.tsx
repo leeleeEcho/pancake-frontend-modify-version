@@ -12,7 +12,7 @@ import {
 } from '@pancakeswap/uikit'
 import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { formatPrice } from '@pancakeswap/utils/formatFractions'
-import { FeeCalculator, Pool, encodeSqrtRatioX96, isPoolTickInRange, parseProtocolFees } from '@pancakeswap/v3-sdk'
+import { encodeSqrtRatioX96, FeeCalculator, isPoolTickInRange, parseProtocolFees, Pool } from '@pancakeswap/v3-sdk'
 import {
   RoiCalculatorModalV2,
   RoiCalculatorPositionInfo,
@@ -24,7 +24,7 @@ import { useRouter } from 'next/router'
 import { useCallback, useMemo, useState } from 'react'
 import { styled } from 'styled-components'
 
-import { PositionDetails, getPositionFarmApr, getPositionFarmAprFactor } from '@pancakeswap/farms'
+import { getPositionFarmApr, getPositionFarmAprFactor, PositionDetails } from '@pancakeswap/farms'
 import { Bound } from 'config/constants/types'
 import { useFarm } from 'hooks/useFarm'
 import { usePoolAvgTradingVolume } from 'hooks/usePoolTradingVolume'
@@ -34,8 +34,8 @@ import { usePairTokensPrice } from 'hooks/v3/usePairTokensPrice'
 import { useAllV3Ticks } from 'hooks/v3/usePoolTickData'
 import useV3DerivedInfo from 'hooks/v3/useV3DerivedInfo'
 import { batch } from 'react-redux'
-import { CurrencyField as Field } from 'utils/types'
 import currencyId from 'utils/currencyId'
+import { CurrencyField as Field } from 'utils/types'
 
 import { useUserPositionInfo } from 'views/Farms/components/YieldBooster/hooks/bCakeV3/useBCakeV3Info'
 import { BoostStatus, useBoostStatus } from 'views/Farms/components/YieldBooster/hooks/bCakeV3/useBoostStatus'

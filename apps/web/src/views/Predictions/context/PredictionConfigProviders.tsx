@@ -1,7 +1,7 @@
 import { ChainId } from '@pancakeswap/chains'
 import { PredictionSupportedSymbol } from '@pancakeswap/prediction'
-import LocalReduxProvider from 'contexts/LocalRedux/Provider'
 import makeStore from 'contexts/LocalRedux/makeStore'
+import LocalReduxProvider from 'contexts/LocalRedux/Provider'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import _toUpper from 'lodash/toUpper'
 import { useRouter } from 'next/router'

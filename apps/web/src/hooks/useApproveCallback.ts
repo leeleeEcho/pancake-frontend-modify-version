@@ -9,7 +9,7 @@ import { useHasPendingApproval, useTransactionAdder } from 'state/transactions/h
 import { calculateGasMargin } from 'utils'
 import { getViemErrorMessage } from 'utils/errors'
 import { isUserRejected, logError } from 'utils/sentry'
-import { Address, SendTransactionReturnType, encodeFunctionData, parseAbi } from 'viem'
+import { Address, encodeFunctionData, parseAbi, SendTransactionReturnType } from 'viem'
 import { useAccount } from 'wagmi'
 import useGelatoLimitOrdersLib from './limitOrders/useGelatoLimitOrdersLib'
 import { useCallWithGasPrice } from './useCallWithGasPrice'

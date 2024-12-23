@@ -14,9 +14,9 @@ import { LotteryResponse } from 'state/types'
 import { styled } from 'styled-components'
 import Timer from 'views/Lottery/components/Countdown/Timer'
 import useGetNextLotteryEvent from 'views/Lottery/hooks/useGetNextLotteryEvent'
-import * as S from './Styled'
 import useNextEventCountdown from './hooks/useNextEventCountdown'
 import { lotteryImage, lotteryMobileImage } from './images'
+import * as S from './Styled'
 
 const RightWrapper = styled.div`
   position: absolute;

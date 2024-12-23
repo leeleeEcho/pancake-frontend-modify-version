@@ -5,7 +5,7 @@ import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
 import { tickToPrice } from '@pancakeswap/v3-sdk'
 import BN from 'bignumber.js'
 import chunk from 'lodash/chunk'
-import { Address, PublicClient, formatUnits, getAddress } from 'viem'
+import { Address, formatUnits, getAddress, PublicClient } from 'viem'
 
 import { getCurrencyListUsdPrice } from '@pancakeswap/price-api-sdk'
 import { DEFAULT_COMMON_PRICE, PriceHelper } from '../constants/common'

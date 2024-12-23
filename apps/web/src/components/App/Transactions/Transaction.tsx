@@ -1,5 +1,4 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { useMemo } from 'react'
 import { CheckmarkCircleIcon, ErrorIcon, ScanLink } from '@pancakeswap/uikit'
 import {
   TransactionListItem,
@@ -7,9 +6,10 @@ import {
   TransactionListItemTitle,
   TransactionStatus,
 } from '@pancakeswap/widgets-internal'
+import { useMemo } from 'react'
 import { ChainLinkSupportChains } from 'state/info/constant'
-import { TransactionDetails } from 'state/transactions/reducer'
 import { useReadableTransactionType } from 'state/transactions/hooks'
+import { TransactionDetails } from 'state/transactions/reducer'
 import { styled } from 'styled-components'
 import { getBlockExploreLink } from 'utils'
 

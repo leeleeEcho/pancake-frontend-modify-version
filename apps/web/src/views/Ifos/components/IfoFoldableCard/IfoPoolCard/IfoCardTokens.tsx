@@ -1,4 +1,4 @@
-import { Ifo, PoolIds, cakeBnbLpToken } from '@pancakeswap/ifos'
+import { cakeBnbLpToken, Ifo, PoolIds } from '@pancakeswap/ifos'
 import { useTranslation } from '@pancakeswap/localization'
 import { Token } from '@pancakeswap/sdk'
 import { bscTokens } from '@pancakeswap/tokens'

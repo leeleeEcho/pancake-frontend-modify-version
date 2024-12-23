@@ -1,7 +1,7 @@
-import { Currency } from '@pancakeswap/sdk'
-import { memo } from 'react'
-import { Row, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
+import { Currency } from '@pancakeswap/sdk'
+import { Row, Text } from '@pancakeswap/uikit'
+import { memo } from 'react'
 
 import InternalLink from 'components/Links'
 import { useActiveChainId } from 'hooks/useActiveChainId'

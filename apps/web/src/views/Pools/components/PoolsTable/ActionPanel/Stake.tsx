@@ -30,7 +30,7 @@ import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { DeserializedLockedCakeVault, VaultKey } from 'state/types'
 import { styled } from 'styled-components'
-import { VaultPosition, getVaultPosition } from 'utils/cakePool'
+import { getVaultPosition, VaultPosition } from 'utils/cakePool'
 import useUserDataInVaultPresenter from 'views/Pools/components/LockedPool/hooks/useUserDataInVaultPresenter'
 import { useProfileRequirement } from 'views/Pools/hooks/useProfileRequirement'
 

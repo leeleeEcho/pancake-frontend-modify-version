@@ -1,7 +1,7 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, Link, OpenNewIcon, RefreshIcon } from '@pancakeswap/uikit'
-import { styled } from 'styled-components'
 import { useTranslation } from '@pancakeswap/localization'
+import { BlockIcon, CheckmarkCircleIcon, Flex, Link, OpenNewIcon, RefreshIcon } from '@pancakeswap/uikit'
 import { TransactionDetails } from 'state/transactions/reducer'
+import { styled } from 'styled-components'
 import { getBlockExploreLink } from 'utils'
 
 interface TransactionRowProps {

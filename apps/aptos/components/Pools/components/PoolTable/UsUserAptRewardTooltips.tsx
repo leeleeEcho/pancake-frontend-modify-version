@@ -1,6 +1,6 @@
 import { Coin } from '@pancakeswap/aptos-swap-sdk'
 import { useTranslation } from '@pancakeswap/localization'
-import { Box, Text, TooltipText, WarningIcon, useTooltip } from '@pancakeswap/uikit'
+import { Box, Text, TooltipText, useTooltip, WarningIcon } from '@pancakeswap/uikit'
 import { Pool } from '@pancakeswap/widgets-internal'
 import { useIsAptosRewardToken } from 'components/Pools/hooks/useIsAptosRewardToken'
 

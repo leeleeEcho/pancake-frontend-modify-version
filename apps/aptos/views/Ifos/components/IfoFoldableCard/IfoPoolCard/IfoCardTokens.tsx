@@ -1,29 +1,29 @@
 import { Currency } from '@pancakeswap/aptos-swap-sdk'
 import { useAccount } from '@pancakeswap/awgmi'
-import { getBalanceNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 import { useTranslation } from '@pancakeswap/localization'
+import { getBalanceNumber, getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
 
 import {
-  Text,
-  Flex,
+  BalanceWithLoading,
   Box,
+  BunnyPlaceholderIcon,
   CheckmarkCircleIcon,
+  Flex,
   FlexProps,
   HelpIcon,
-  useTooltip,
-  BunnyPlaceholderIcon,
+  IfoPercentageOfTotal,
+  IfoSkeletonCardTokens,
+  IfoVestingAvailableToClaim,
   Message,
   MessageText,
-  IfoSkeletonCardTokens,
-  IfoPercentageOfTotal,
-  IfoVestingAvailableToClaim,
-  BalanceWithLoading,
+  Text,
+  useTooltip,
 } from '@pancakeswap/uikit'
 import { TokenImage, TokenPairImage } from 'components/TokenImage'
 import { Ifo, PoolIds } from 'config/constants/types'
-import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
-import { getStatus } from 'views/Ifos/hooks/helpers'
 import useLedgerTimestamp from 'hooks/useLedgerTimestamp'
+import { getStatus } from 'views/Ifos/hooks/helpers'
+import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 
 interface TokenSectionProps extends FlexProps {
   primaryToken?: Currency

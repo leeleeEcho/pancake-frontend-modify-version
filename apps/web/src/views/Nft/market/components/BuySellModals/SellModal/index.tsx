@@ -17,8 +17,8 @@ import EditStage from './EditStage'
 import RemoveStage from './RemoveStage'
 import SellStage from './SellStage'
 import SetPriceStage from './SetPriceStage'
+import { stagesWithBackButton, StyledModal } from './styles'
 import TransferStage from './TransferStage'
-import { StyledModal, stagesWithBackButton } from './styles'
 import { SellingStage } from './types'
 
 export const modalTitles = (stage: SellingStage, t: ContextApi['t']) => {

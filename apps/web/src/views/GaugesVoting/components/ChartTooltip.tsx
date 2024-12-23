@@ -1,4 +1,4 @@
-import { GAUGE_TYPE_NAMES, Gauge, GaugeType } from '@pancakeswap/gauges'
+import { Gauge, GaugeType, GAUGE_TYPE_NAMES } from '@pancakeswap/gauges'
 import { Percent } from '@pancakeswap/swap-sdk-core'
 import { Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useMemo } from 'react'

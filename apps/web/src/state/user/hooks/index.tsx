@@ -17,14 +17,13 @@ import { Hex, hexToBigInt } from 'viem'
 import { useWalletClient } from 'wagmi'
 import { GAS_PRICE_GWEI } from '../../types'
 import {
-  FarmStakedOnly,
-  SerializedPair,
-  ViewMode,
   addSerializedPair,
   addSerializedToken,
   addWatchlistPool,
   addWatchlistToken,
+  FarmStakedOnly,
   removeSerializedToken,
+  SerializedPair,
   setSubgraphHealthIndicatorDisplayed,
   updateGasPrice,
   updateUserFarmStakedOnly,
@@ -36,6 +35,7 @@ import {
   updateUserPredictionChainlinkChartDisclaimerShow,
   updateUserPredictionChartDisclaimerShow,
   updateUserUsernameVisibility,
+  ViewMode,
 } from '../actions'
 import { useUserChart } from './useUserChart'
 

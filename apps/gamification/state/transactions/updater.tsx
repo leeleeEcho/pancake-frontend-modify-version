@@ -1,6 +1,7 @@
-import { ChainId, AVERAGE_CHAIN_BLOCK_TIMES } from '@pancakeswap/chains'
+import { AVERAGE_CHAIN_BLOCK_TIMES, ChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import { useToast } from '@pancakeswap/uikit'
+import { useFetchBlockData } from '@pancakeswap/wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { BSC_BLOCK_TIME } from 'config'
 import forEach from 'lodash/forEach'
@@ -8,7 +9,7 @@ import merge from 'lodash/merge'
 import pickBy from 'lodash/pickBy'
 import React, { useEffect, useRef } from 'react'
 import { useAppDispatch } from 'state'
-import { RetryableError, retry } from 'state/multicall/retry'
+import { retry, RetryableError } from 'state/multicall/retry'
 import {
   BlockNotFoundError,
   TransactionNotFoundError,
@@ -16,7 +17,6 @@ import {
   WaitForTransactionReceiptTimeoutError,
 } from 'viem'
 import { usePublicClient } from 'wagmi'
-import { useFetchBlockData } from '@pancakeswap/wagmi'
 import { finalizeTransaction } from './actions'
 import { useAllChainTransactions } from './hooks'
 import { TransactionDetails } from './reducer'

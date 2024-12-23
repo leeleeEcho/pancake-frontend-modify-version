@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Kumbh Sans', 'Kanit', sans-serif;
     --colors-primary: #FFC402;
     --colors-secondary:#FFC402;
-    --colors-background: #000000;
+    --colors-background: #100F15;
     --colors-gradientBubblegum:url('/ztd/trade/bg_trade_swap.jpg');
     --colors-textSubtle: #f0f0f0;
     --colors-input: #222;

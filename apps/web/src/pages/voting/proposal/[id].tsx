@@ -1,6 +1,6 @@
 // eslint-disable-next-line camelcase
-import { QueryClient, dehydrate } from '@tanstack/react-query'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { dehydrate, QueryClient } from '@tanstack/react-query'
+import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import { ProposalState } from 'state/types'
 import { getProposal } from 'state/voting/helpers'

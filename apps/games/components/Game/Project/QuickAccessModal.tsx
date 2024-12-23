@@ -1,7 +1,7 @@
-import { styled } from 'styled-components'
-import { Box } from '@pancakeswap/uikit'
 import { GameType } from '@pancakeswap/games'
+import { Box } from '@pancakeswap/uikit'
 import { QuickAccess } from 'components/Game/Project/QuickAccess'
+import { styled } from 'styled-components'
 
 const StyledQuickAccessModal = styled(Box)`
   position: absolute;

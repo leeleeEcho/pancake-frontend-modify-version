@@ -1,6 +1,5 @@
 import { useCountdown } from '@pancakeswap/hooks'
 import { useTranslation } from '@pancakeswap/localization'
-import truncateHash from '@pancakeswap/utils/truncateHash'
 import {
   CheckmarkCircleIcon,
   CircleLoader,
@@ -9,15 +8,16 @@ import {
   Flex,
   Modal,
   RowBetween,
-  Text,
   ScanLink,
+  Text,
 } from '@pancakeswap/uikit'
+import truncateHash from '@pancakeswap/utils/truncateHash'
 import { LightGreyCard } from 'components/Card'
 import dayjs from 'dayjs'
 import { useToken } from 'hooks/Tokens'
-import { formatUnits } from 'viem'
 import { useMemo } from 'react'
 import { getBlockExploreLink } from 'utils'
+import { formatUnits } from 'viem'
 
 import { GetXOrderReceiptResponseOrder } from './api'
 

@@ -1,6 +1,6 @@
 import { ChainId } from '@pancakeswap/chains'
 import { WNATIVE } from '@pancakeswap/sdk'
-import { Address, PublicClient, getContract } from 'viem'
+import { Address, getContract, PublicClient } from 'viem'
 import { feeOnTransferDetectorAbi } from './abis/FeeOnTransferDetector'
 
 export const feeOnTransferDetectorAddresses = {

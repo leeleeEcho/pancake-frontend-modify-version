@@ -17,7 +17,7 @@ import {
 import Trans from 'components/Trans'
 import { ReactNode, useMemo } from 'react'
 import { DeserializedLockedVaultUser } from 'state/types'
-import { VaultPosition, getVaultPosition } from 'utils/cakePool'
+import { getVaultPosition, VaultPosition } from 'utils/cakePool'
 import { useIsMigratedToVeCake } from 'views/CakeStaking/hooks/useIsMigratedToVeCake'
 import { useIsUserDelegated } from 'views/CakeStaking/hooks/useIsUserDelegated'
 
