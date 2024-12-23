@@ -105,7 +105,7 @@ const Chart = ({
                 }
                 const formattedTime = dayjs(props.payload.time).format('MMM D, YYYY')
                 if (setLabel && label !== formattedTime) setLabel(formattedTime)
-                return null; as any
+                return null as any
               }}
             />
             <Area dataKey="value" type="monotone" stroke={color} fill="url(#gradient)" strokeWidth={2} />

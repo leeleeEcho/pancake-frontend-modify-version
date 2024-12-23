@@ -1006,7 +1006,7 @@ const positionHistoryTypeText = {
   mint: <Trans>Add Liquidity</Trans>,
   burn: <Trans>Remove Liquidity</Trans>,
   collect: <Trans>Collect fee</Trans>,
-} satisfies Record<PositionHistoryType, ReactNode>
+}
 
 function PositionHistoryRow({
   chainId,

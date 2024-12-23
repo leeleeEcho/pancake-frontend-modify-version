@@ -34,7 +34,7 @@ ProposalPage.Meta = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   return null
 }
 
-export const getStaticProps = (async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const queryClient = new QueryClient()
   const id = params?.id
   if (typeof id !== 'string') {
@@ -73,6 +73,6 @@ export const getStaticProps = (async ({ params }) => {
       revalidate: 60,
     }
   }
-}) satisfies GetStaticProps
+}
 
 export default ProposalPage

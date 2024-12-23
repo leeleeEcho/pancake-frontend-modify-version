@@ -53,12 +53,12 @@ const SUCCESS_RATE_CONFIG = {
   [ChainId.ARBITRUM_SEPOLIA]: 0.1,
   [ChainId.BASE_SEPOLIA]: 0.1,
 } as const satisfies Record<ChainId, number>
-
+//
 type V4ClInputs = [
   {
     exactAmount: string
     exactCurrency: string
-    path: PathKey[]
+    path: any[]
   },
 ]
 type V3Inputs = [string, string]

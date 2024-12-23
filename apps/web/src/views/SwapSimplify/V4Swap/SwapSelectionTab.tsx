@@ -105,6 +105,7 @@ export const SwapSelection = ({
         <StyledButtonMenuItem style={{ color: '#FFC402', backgroundColor: 'transparent', flex: 'none' }}>
           {t('Swap')}
         </StyledButtonMenuItem>
+        <div></div>
         {/* <StyledButtonMenuItem {...tSwapProps}>{t('TWAP')}</StyledButtonMenuItem>
         <StyledButtonMenuItem {...tSwapProps}>{t('Limit')}</StyledButtonMenuItem> */}
       </ButtonMenu>
