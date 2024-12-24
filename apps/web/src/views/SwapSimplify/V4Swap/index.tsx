@@ -143,17 +143,17 @@ export function V4SwapForm() {
             isUserInsufficientBalance={isUserInsufficientBalance}
           />
         </SwapUIV2.SwapTabAndInputPanelWrapper>
-        {shouldShowBuyCrypto && <BuyCryptoPanel link={buyCryptoLink} />}
-        {(shouldRiskPanelDisplay || isPriceImpactTooHigh || isSlippageTooHigh) && (
-          <RiskDetailsPanel
-            isPriceImpactTooHigh={isPriceImpactTooHigh}
-            isSlippageTooHigh={isSlippageTooHigh}
-            token0={inputCurrency?.wrapped}
-            token1={outputCurrency?.wrapped}
-            token0RiskLevelDescription={token0Risk.data?.riskLevelDescription}
-            token1RiskLevelDescription={token1Risk.data?.riskLevelDescription}
-          />
-        )}
+        {/* {shouldShowBuyCrypto && <BuyCryptoPanel link={buyCryptoLink} />} */}
+        {/* {(shouldRiskPanelDisplay || isPriceImpactTooHigh || isSlippageTooHigh) && ( */}
+        {/*   <RiskDetailsPanel */}
+        {/*     isPriceImpactTooHigh={isPriceImpactTooHigh} */}
+        {/*     isSlippageTooHigh={isSlippageTooHigh} */}
+        {/*     token0={inputCurrency?.wrapped} */}
+        {/*     token1={outputCurrency?.wrapped} */}
+        {/*     token0RiskLevelDescription={token0Risk.data?.riskLevelDescription} */}
+        {/*     token1RiskLevelDescription={token1Risk.data?.riskLevelDescription} */}
+        {/*   /> */}
+        {/* )} */}
 
         {/* submit btn */}
         <ButtonAndDetailsPanel
@@ -192,7 +192,7 @@ export function V4SwapForm() {
           }
           tradeDetails={<TradeDetails loaded={tradeLoaded} order={bestOrder} />}
           shouldRenderDetails={Boolean(executionPrice) && Boolean(bestOrder) && !isWrapping && !tradeError}
-          mevSlot={<MevToggle />}
+          // mevSlot={<MevToggle />}
           gasTokenSelector={
             isPaymasterAvailable && <GasTokenSelector mt="8px" inputCurrency={inputCurrency || undefined} />
           }

@@ -141,7 +141,7 @@ export default function V4Swap() {
         </Flex>
       </Flex>
 
-      <AdPanel.MobileCard />
+      {/* <AdPanel.MobileCard /> */}
     </Page>
   )
 }
