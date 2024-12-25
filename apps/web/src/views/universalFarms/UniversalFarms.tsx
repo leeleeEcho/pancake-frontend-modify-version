@@ -1,5 +1,5 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { Button, Card, Tab, TabMenu, Text } from '@pancakeswap/uikit'
+import { Button, Tab, TabMenu, Text } from '@pancakeswap/uikit'
 import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
 import Page from 'components/Layout/Page'
 import { useRouter } from 'next/router'
@@ -83,14 +83,14 @@ export const UniversalFarms: React.FC<PropsWithChildren> = () => {
         ),
         page: () => <PositionPage />,
       },
-      2: {
-        menu: () => (
-          <StyledTab key="history">
-            <NextLinkFromReactRouter to={PAGES_LINK.HISTORY}>{t('History')}</NextLinkFromReactRouter>
-          </StyledTab>
-        ),
-        page: () => <Card>History</Card>,
-      },
+      // 2: {
+      //   menu: () => (
+      //     <StyledTab key="history">
+      //       <NextLinkFromReactRouter to={PAGES_LINK.HISTORY}>{t('History')}</NextLinkFromReactRouter>
+      //     </StyledTab>
+      //   ),
+      //   page: () => <Card>History</Card>,
+      // },
     }
   }, [t])
 

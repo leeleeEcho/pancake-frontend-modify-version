@@ -26,7 +26,6 @@ import {
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 import GlobalSettings from 'components/Menu/GlobalSettings'
 import { SettingsMode } from 'components/Menu/GlobalSettings/types'
-import { ASSET_CDN } from 'config/constants/endpoints'
 import intersection from 'lodash/intersection'
 import NextLink from 'next/link'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -41,28 +40,28 @@ import {
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 
+import { useIntersectionObserver } from '@pancakeswap/hooks'
 import { Currency } from '@pancakeswap/swap-sdk-core'
 import { getTokenByAddress } from '@pancakeswap/tokens'
 import { Pool } from '@pancakeswap/v3-sdk'
+import ConnectWalletButton from 'components/ConnectWalletButton'
+import { V3_MIGRATION_SUPPORTED_CHAINS } from 'config/constants/supportChains'
 import { usePoolsWithMultiChains } from 'hooks/v3/usePools'
 import { PositionDetail } from 'state/farmsV4/state/accountPositions/type'
-import { V3_MIGRATION_SUPPORTED_CHAINS } from 'config/constants/supportChains'
-import { useIntersectionObserver } from '@pancakeswap/hooks'
-import ConnectWalletButton from 'components/ConnectWalletButton'
 import {
   Card,
-  IPoolsFilterPanelProps,
-  PoolsFilterPanel,
-  StablePositionItem,
   CardBody as StyledCardBody,
   CardHeader as StyledCardHeader,
+  IPoolsFilterPanelProps,
+  PoolsFilterPanel,
+  PositionItemSkeleton,
+  StablePositionItem,
   useSelectedPoolTypes,
   V2PositionItem,
   V3PositionItem,
-  PositionItemSkeleton,
 } from './components'
+import { useFilterToQueries, V3_STATUS } from './hooks/useFilterToQueries'
 import { MAINNET_CHAINS } from './hooks/useMultiChains'
-import { V3_STATUS, useFilterToQueries } from './hooks/useFilterToQueries'
 
 const ToggleWrapper = styled.div`
   display: inline-flex;
@@ -313,12 +312,12 @@ const EmptyListPlaceholder = ({ text, imageUrl }: { text: string; imageUrl?: str
 
   return (
     <FlexGap alignItems="center" flexDirection="column" gap="16px">
-      <img
+      {/* <img
         width={156}
         height={179}
         alt="empty placeholder"
         src={imageUrl ?? `${ASSET_CDN}/web/universalFarms/empty_list_bunny.png`}
-      />
+      /> */}
       <Text fontSize="14px" color="textSubtle" textAlign="center">
         {text}
       </Text>

@@ -2,7 +2,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { Button, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
 
-import { AdPanel } from 'components/AdPanel'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import useTheme from 'hooks/useTheme'
@@ -260,7 +259,7 @@ const Hero = () => {
               </Button>
             </NextLinkFromReactRouter>
           </Flex>
-          <Flex
+          {/* <Flex
             mt="32px"
             alignItems="center"
             justifyContent="center"
@@ -268,7 +267,7 @@ const Hero = () => {
             mx={['auto', 'auto', 'auto', '0']}
           >
             <AdPanel.AdPlayer />
-          </Flex>
+          </Flex> */}
         </Flex>
         <Flex
           height={['100%', null, null, '100%']}

@@ -12,7 +12,7 @@ import useTheme from 'hooks/useTheme'
 import { IdType, useUserNotUsCitizenAcknowledgement } from 'hooks/useUserIsUsCitizenAcknowledgement'
 import { useWebNotifications } from 'hooks/useWebNotifications'
 import { useRouter } from 'next/router'
-import { lazy, Suspense, useCallback, useMemo } from 'react'
+import { lazy, useCallback, useMemo } from 'react'
 import { getOptionsUrl } from 'utils/getOptionsUrl'
 import { useMenuItems, UseMenuItemsParams } from './hooks/useMenuItems'
 import UserMenu from './UserMenu'
@@ -107,11 +107,7 @@ const Menu = (props) => {
       rightSide={
         <>
           {/* <GlobalSettings mode={SettingsMode.GLOBAL} /> */}
-          {enabled && (
-            <Suspense fallback={null}>
-              <Notifications />
-            </Suspense>
-          )}
+
           <NetworkSwitcher />
           <UserMenu />
         </>

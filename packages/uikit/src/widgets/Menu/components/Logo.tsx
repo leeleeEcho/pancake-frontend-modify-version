@@ -15,13 +15,13 @@ const blink = keyframes`
 const StyledLink = styled("a")`
   display: flex;
   .mobile-icon {
-    width: 115px;
+    width: 50px;
     ${({ theme }) => theme.mediaQueries.xl} {
       display: none;
     }
   }
   .desktop-icon {
-    width: 115px;
+    width: 50px;
     display: none;
     ${({ theme }) => theme.mediaQueries.xl} {
       display: block;
@@ -45,8 +45,8 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <img src="/ztd/head/logo.png" className="mobile-icon" />
-      <img src="/ztd/head/logo.png" className="desktop-icon" />
+      <img src="/ztd/head/logo.jpg" className="mobile-icon" />
+      <img src="/ztd/head/logo.jpg" className="desktop-icon" />
       {/* <LogoIcon className="mobile-icon" />
       <LogoWithTextIcon className="desktop-icon" /> */}
     </>

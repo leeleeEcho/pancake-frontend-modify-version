@@ -1,17 +1,16 @@
 import { PredictionStatus } from '@pancakeswap/prediction'
 import { Box, Flex, Link } from '@pancakeswap/uikit'
-import { AdPanel } from 'components/AdPanel'
 import { memo } from 'react'
 import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'
 import { styled } from 'styled-components'
-import History from './History'
-import MobileChart from './MobileChart'
-import Positions from './Positions'
 import LoadingSection from './components/LoadingSection'
 import Menu from './components/Menu'
 import MobileMenu from './components/MobileMenu'
 import { ErrorNotification, PauseNotification } from './components/Notification'
 import { useConfig } from './context/ConfigProvider'
+import History from './History'
+import MobileChart from './MobileChart'
+import Positions from './Positions'
 import { PageView } from './types'
 
 const StyledMobile = styled.div`
@@ -51,9 +50,9 @@ const Mobile: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <StyledMobile>
-      <Flex mt="24px" justifyContent="center">
+      {/* <Flex mt="24px" justifyContent="center">
         <AdPanel.MobileCard />
-      </Flex>
+      </Flex> */}
       <Box height="100%">
         {view === PageView.POSITIONS && (
           <Flex justifyContent="center" alignItems="center" flexDirection="column" minHeight="100%">

@@ -8,7 +8,6 @@ import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "../../components/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
-import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../contexts";
 import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
@@ -160,43 +159,11 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
                 </AtomBox>
               </Flex>
               <Flex alignItems="center" height="100%">
-                {/* <AtomBox mr="12px" display={{ xs: "none", xxl: "block" }}>
-                  <CakePrice chainId={chainId} showSkeleton={false} cakePriceUsd={cakePriceUsd} />
-                </AtomBox> */}
-                {/* <Box mt="4px">
-                  <LangSelector
-                    currentLang={currentLang}
-                    langs={langs}
-                    setLang={setLang}
-                    buttonScale="xs"
-                    color="textSubtle"
-                    hideLanguage
-                  />
-                </Box> */}
                 {rightSide}
               </Flex>
             </StyledNav>
           </FixedContainer>
-          {subLinks ? (
-            <Flex justifyContent="space-around" overflow="hidden">
-              <SubMenuItems
-                items={subLinksWithoutMobile}
-                mt={`${totalTopMenuHeight + 1}px`}
-                activeItem={activeSubItemChildItem || activeSubItem}
-              />
 
-              {subLinksMobileOnly && subLinksMobileOnly?.length > 0 && (
-                <SubMenuItems
-                  items={subLinksMobileOnly}
-                  mt={`${totalTopMenuHeight + 1}px`}
-                  activeItem={activeSubItemChildItem || activeSubItem}
-                  isMobileOnly
-                />
-              )}
-            </Flex>
-          ) : (
-            <div />
-          )}
           <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
             <Inner>{children}</Inner>
           </BodyWrapper>

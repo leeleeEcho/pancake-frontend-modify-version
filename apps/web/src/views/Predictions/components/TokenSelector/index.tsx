@@ -1,10 +1,8 @@
-import { Box, ChevronDownIcon, Flex, ModalV2, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Box, ChevronDownIcon, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { TokenImage } from 'components/TokenImage'
 import { useRouter } from 'next/router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { styled } from 'styled-components'
-import { DesktopPredictionTokenSelector } from 'views/Predictions/components/TokenSelector/Desktop'
-import { MobilePredictionTokenSelector } from 'views/Predictions/components/TokenSelector/Mobile'
 import { Price } from 'views/Predictions/components/TokenSelector/Price'
 import { SvgToken } from 'views/Predictions/components/TokenSelector/SvgToken'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
@@ -137,7 +135,7 @@ export const TokenSelector = () => {
             )}
           </Flex>
         </Flex>
-        {isDesktop ? (
+        {/* {isDesktop ? (
           <DesktopPredictionTokenSelector
             isOpen={isOpen}
             tokenListData={tokenListData}
@@ -151,7 +149,7 @@ export const TokenSelector = () => {
               onClickSwitchToken={onClickSwitchToken}
             />
           </ModalV2>
-        )}
+        )} */}
       </Selector>
     </Flex>
   )

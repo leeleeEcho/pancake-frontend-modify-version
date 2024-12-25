@@ -1,4 +1,4 @@
-import { ArrowBackIcon, ArrowForwardIcon, BunnyCardsIcon, Flex, IconButton } from '@pancakeswap/uikit'
+import { ArrowBackIcon, ArrowForwardIcon, Flex, IconButton } from '@pancakeswap/uikit'
 import { useGetSortedRoundsCurrentEpoch } from 'state/predictions/hooks'
 import { styled } from 'styled-components'
 import useSwiper from '../hooks/useSwiper'
@@ -55,7 +55,8 @@ const PrevNextNav = () => {
         <ArrowBackIcon color="primary" width="24px" />
       </IconButton>
       <Icon onClick={handleSlideToLive}>
-        <BunnyCardsIcon width="64px" />
+        {/* <BunnyCardsIcon width="64px" /> */}
+        <img src="/ztd/nav.png" alt="" style={{ width: '64px' }} />
       </Icon>
       <IconButton variant="text" scale="sm" onClick={handleNextSlide}>
         <ArrowForwardIcon color="primary" width="24px" />

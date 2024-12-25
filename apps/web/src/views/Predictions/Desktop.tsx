@@ -1,5 +1,5 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { PredictionStatus, PredictionsChartView } from '@pancakeswap/prediction'
+import { PredictionsChartView, PredictionStatus } from '@pancakeswap/prediction'
 import { Box, Button, ChartIcon, Flex, Link } from '@pancakeswap/uikit'
 import { ChartByLabel } from 'components/Chart/ChartbyLabel'
 import { TabToggle } from 'components/TabToggle'
@@ -17,13 +17,12 @@ import {
   useIsHistoryPaneOpen,
 } from 'state/predictions/hooks'
 import { styled } from 'styled-components'
-import History from './History'
-import Positions from './Positions'
-import LoadingSection from './components/LoadingSection'
 import Menu from './components/Menu'
 import { ErrorNotification, PauseNotification } from './components/Notification'
 import TradingView from './components/TradingView'
 import { useConfig } from './context/ConfigProvider'
+import History from './History'
+import Positions from './Positions'
 
 const ChainlinkChart = dynamic(() => import('./components/ChainlinkChart'), { ssr: false })
 
@@ -221,7 +220,7 @@ const Desktop: React.FC<React.PropsWithChildren> = () => {
           {[PredictionStatus.INITIAL, PredictionStatus.LIVE].includes(status) && (
             <Box>
               <Menu />
-              {status === PredictionStatus.LIVE ? <Positions /> : <LoadingSection />}
+              {status === PredictionStatus.LIVE ? <Positions /> : null}
             </Box>
           )}
         </PositionPane>

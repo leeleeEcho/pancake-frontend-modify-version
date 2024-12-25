@@ -11,9 +11,6 @@ import {
   RowBetween,
   Text,
 } from '@pancakeswap/uikit'
-import { AdPanel } from 'components/AdPanel'
-import { commonLayoutWhitelistedPages } from 'components/AdPanel/config'
-import { shouldRenderOnPages } from 'components/AdPanel/renderConditions'
 import Page from 'components/Layout/Page'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -21,9 +18,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { usePollFarmsWithUserData } from 'state/farms/hooks'
 import bCakeMigrationImage from 'views/Farms/images/bCakeMigration.png'
 import { farmV3MigrationBunnyFull } from 'views/Home/components/Banners/images'
+import MigrationFarmStep from './components/bCake/MigrationFarmStep'
 import MigrationSticky, { TEXT } from './components/MigrationSticky'
 import { MigrationProgressSteps, Step } from './components/ProgressSteps'
-import MigrationFarmStep from './components/bCake/MigrationFarmStep'
 
 const steps: Step[] = [
   {
@@ -178,7 +175,7 @@ const MigrationPage: React.FC<React.PropsWithChildren> = () => {
         {step === 0 && <MigrationFarmStep step={1} />}
         {step === 1 && <MigrationFarmStep step={2} />}
       </Page>
-      <AdPanel.MobileCard shouldRender={shouldRenderOnPages(commonLayoutWhitelistedPages)} mb="48px" />
+      {/* <AdPanel.MobileCard shouldRender={shouldRenderOnPages(commonLayoutWhitelistedPages)} mb="48px" /> */}
       <MigrationSticky version="bCake" step={step} handleClick={handleMigrationStickyClick} />
     </div>
   )
