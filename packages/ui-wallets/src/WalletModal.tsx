@@ -387,7 +387,7 @@ export function WalletModalV2<T = unknown>(props: WalletModalV2Props<T>) {
       wallets
         .map((w) => w.icon)
         .filter((icon) => typeof icon === 'string')
-        .concat('https://cdn.pancakeswap.com/wallets/wallet_intro.png') as string[],
+        .concat('https://ztd-public.s3.ap-southeast-1.amazonaws.com/8d4af27538aff95252431d0ef76f1ac.png') as string[],
     [wallets],
   )
 
@@ -441,13 +441,17 @@ const Intro = ({ docLink, docText }: { docLink: string; docText: string }) => {
   const { t } = useTranslation()
   return (
     <>
-      {/* /!* <Heading as="h1" fontSize="20px" color="secondary"> *!/ */}
-      {/* /!*   {t('Haven’t got a wallet yet?')} *!/ */}
-      {/* /!* </Heading> *!/ */}
-      {/* <Image src="https://cdn.pancakeswap.com/wallets/wallet_intro.png" width={198} height={178} /> */}
-      {/* /!* <Button as={LinkExternal} color="backgroundAlt" variant="subtle" href={docLink}> *!/ */}
-      {/* /!*   {docText} *!/ */}
-      {/* /!* </Button> *!/ */}
+      <Heading as="h1" fontSize="20px" color="secondary">
+        {t('Haven’t got a wallet yet?')}
+      </Heading>
+      <Image
+        src="https://ztd-public.s3.ap-southeast-1.amazonaws.com/8d4af27538aff95252431d0ef76f1ac.png"
+        width={398}
+        height={378}
+      />
+      {/* <Button as={LinkExternal} color="backgroundAlt" variant="subtle" href={docLink}> */}
+      {/*   {docText} */}
+      {/* </Button> */}
     </>
   )
 }

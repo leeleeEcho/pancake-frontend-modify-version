@@ -110,9 +110,9 @@ export default function Home() {
 
   return (
     <Page>
-      <Heading scale="lg" mb="16px">
-        {t('PancakeSwap Info & Analytics')}
-      </Heading>
+      {/* <Heading scale="lg" mb="16px"> */}
+      {/*   {t('PancakeSwap Info & Analytics')} */}
+      {/* </Heading> */}
       <ChartCardsContainer>
         <Card>
           <LineChart
