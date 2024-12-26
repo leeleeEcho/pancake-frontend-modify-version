@@ -88,28 +88,28 @@ const Menu = () => {
               <TimerLabelWrapper>
                 <TimerLabel />
               </TimerLabelWrapper>
-              <HelpButtonWrapper>
-                <Button
-                  variant="subtle"
-                  as="a"
-                  href="https://docs.pancakeswap.finance/products/prediction"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  width="48px"
-                >
-                  <HelpIcon width="24px" color="white" />
-                </Button>
-              </HelpButtonWrapper>
-              <LeaderboardButtonWrapper>
-                <Link href={leaderboardUrl} passHref>
-                  <Button variant="subtle" width="48px">
-                    <PrizeIcon color="white" />
-                  </Button>
-                </Link>
-              </LeaderboardButtonWrapper>
-              <ButtonWrapper style={{ order: 4 }}>
-                <HistoryButton />
-              </ButtonWrapper>
+              {/* <HelpButtonWrapper> */}
+              {/*   <Button */}
+              {/*     variant="subtle" */}
+              {/*     as="a" */}
+              {/*     href="https://docs.pancakeswap.finance/products/prediction" */}
+              {/*     target="_blank" */}
+              {/*     rel="noreferrer noopener" */}
+              {/*     width="48px" */}
+              {/*   > */}
+              {/*     <HelpIcon width="24px" color="white" /> */}
+              {/*   </Button> */}
+              {/* </HelpButtonWrapper> */}
+              {/* <LeaderboardButtonWrapper> */}
+              {/*   <Link href={leaderboardUrl} passHref> */}
+              {/*     <Button variant="subtle" width="48px"> */}
+              {/*       <PrizeIcon color="white" /> */}
+              {/*     </Button> */}
+              {/*   </Link> */}
+              {/* </LeaderboardButtonWrapper> */}
+              {/* <ButtonWrapper style={{ order: 4 }}> */}
+              {/*   <HistoryButton /> */}
+              {/* </ButtonWrapper> */}
             </Flex>
           </SetCol>
         </>

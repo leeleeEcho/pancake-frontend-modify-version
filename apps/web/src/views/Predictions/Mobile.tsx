@@ -89,7 +89,7 @@ const Mobile: React.FC<React.PropsWithChildren> = () => {
           </Flex>
         )}
         {view === PageView.CHART && <MobileChart />}
-        {view === PageView.HISTORY && <History />}
+        {/* {view === PageView.HISTORY && <History />} */}
       </Box>
       <MobileMenu />
     </StyledMobile>
