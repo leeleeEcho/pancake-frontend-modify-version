@@ -81,12 +81,6 @@ const TabContainer = ({ children, docLink, docText }: PropsWithChildren<{ docLin
 
   return (
     <AtomBox position="relative" zIndex="modal" className={modalWrapperClass}>
-      <AtomBox position="absolute" style={{ top: '-50px' }}>
-        <TabMenu activeIndex={index} onItemClick={setIndex} gap="0px" isColorInverse isShowBorderBottom={false}>
-          <Tab>{t('Connect Wallet')}</Tab>
-          {/* <Tab>{t('What’s a Web3 Wallet?')}</Tab> */}
-        </TabMenu>
-      </AtomBox>
       <AtomBox
         display="flex"
         position="relative"
@@ -167,16 +161,6 @@ function MobileModal<T>({
             }
           }}
         />
-      </AtomBox>
-      <AtomBox p="24px" borderTop="1">
-        <AtomBox>
-          <Text textAlign="center" color="textSubtle" as="p" mb="24px">
-            {t('Haven’t got a crypto wallet yet?')}
-          </Text>
-        </AtomBox>
-        <Button as="a" href={docLink} variant="subtle" width="100%" external>
-          {docText}
-        </Button>
       </AtomBox>
     </AtomBox>
   )
