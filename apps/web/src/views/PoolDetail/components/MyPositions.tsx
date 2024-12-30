@@ -244,9 +244,12 @@ const MyPositionsInner: React.FC<{ poolInfo: PoolInfo }> = ({ poolInfo }) => {
                 setHandleHarvestAll={setHandleHarvestAll}
               />
             ) : null}
-            {count === 0 && (
-              <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
-            )}
+            {
+              count === 0
+              //   && (
+              //   <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
+              // )
+            }
           </PositionCardBody>
         </PositionsCard>
       </Grid>
