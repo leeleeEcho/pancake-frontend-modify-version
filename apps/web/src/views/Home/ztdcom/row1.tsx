@@ -55,7 +55,7 @@ export default function Row1() {
               <div className={cs.btxt}>
                 <div className={cs.wordbox}>
                   <img className={cs.star} src="/ztd/home/star.png" />
-                  <div className={cs.t}>Trading Teward</div>
+                  <div className={cs.t}>Trading Reward</div>
                   <div className={cs.word}>
                     For the first 1000 users of daily transactions, the platform will waive fees and reward up to 100ZTD
                     for the first daily transaction.
