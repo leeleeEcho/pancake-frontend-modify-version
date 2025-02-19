@@ -8,7 +8,7 @@ interface CardFlipProps {
 }
 
 const Front = styled.div`
-  align-items: center;
+  /* align-items: center; */
   backface-visibility: hidden;
   display: flex;
   height: 100%;

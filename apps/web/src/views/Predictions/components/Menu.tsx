@@ -81,7 +81,8 @@ const Menu = () => {
       {status === PredictionStatus.LIVE && (
         <>
           <FlexRow justifyContent="center">
-            <PrevNextNav />
+            {/* 左右移动 */}
+            {/* <PrevNextNav /> */}
           </FlexRow>
           <SetCol>
             <Flex alignItems="center" justifyContent="flex-end">

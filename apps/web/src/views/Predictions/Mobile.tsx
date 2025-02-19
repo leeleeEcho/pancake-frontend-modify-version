@@ -17,6 +17,8 @@ const StyledMobile = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: calc(100vh - 50px);
+  padding-top: 60px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     display: none;
@@ -61,7 +63,7 @@ const Mobile: React.FC<React.PropsWithChildren> = () => {
             {[PredictionStatus.INITIAL, PredictionStatus.LIVE].includes(status) && (
               <Box width="100%">
                 <Menu />
-                {status === PredictionStatus.LIVE ? <Positions view={view} /> : <LoadingSection />}
+                {status === PredictionStatus.LIVE ? <Positions view={view} isMobile /> : <LoadingSection />}
                 {config?.chainlinkOracleAddress && (
                   <Flex justifyContent="right">
                     <PowerLinkStyle href="https://chain.link/" external>

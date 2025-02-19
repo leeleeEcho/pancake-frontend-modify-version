@@ -66,12 +66,12 @@ const Predictions = () => {
 
   return (
     <SwiperProvider>
-      <Container>
-        <Warnings />
-        <RiskDisclaimer />
-        {isDesktop ? <Desktop /> : <Mobile />}
-        <CollectWinningsPopup />
-      </Container>
+      {/* <Container> */}
+      <Warnings />
+      <RiskDisclaimer />
+      {isDesktop ? <Desktop /> : <Mobile />}
+      <CollectWinningsPopup />
+      {/* </Container> */}
     </SwiperProvider>
   )
 }

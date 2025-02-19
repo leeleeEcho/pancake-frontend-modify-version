@@ -1,0 +1,51 @@
+.rootBox {
+  position: relative;
+  display: grid;
+  box-sizing: border-box;
+  padding: 0 78px 24px 78px;
+  grid-template-columns: auto 1fr 300px;
+  grid-template-rows: 140px 550px auto;
+  // gap: 45px;
+  gap: 45px 0;
+  grid-template-areas:
+    'menu menu menu'
+    'history chart list'
+    'history next list';
+
+  .itemHistory {
+    grid-area: history;
+    &.show {
+      margin-right: 45px;
+    }
+  }
+
+  .itemMenu {
+    grid-area: menu;
+    box-sizing: border-box;
+    padding-top: 70px;
+  }
+  .itemChart {
+    grid-area: chart;
+    margin-right: 45px;
+  }
+  .itemList {
+    grid-area: list;
+  }
+  .itemNext {
+    grid-area: next;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 165px;
+    margin-right: 45px;
+
+    & > div {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      & > div {
+        width: 300px;
+      }
+    }
+  }
+}
