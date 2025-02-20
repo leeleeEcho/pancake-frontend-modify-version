@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
-import { Keyboard, Mousewheel, FreeMode } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+// import { Keyboard, Mousewheel, FreeMode } from 'swiper/modules'
+// import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { useGetSortedRoundsCurrentEpoch } from 'state/predictions/hooks'
 import delay from 'lodash/delay'
@@ -81,7 +81,11 @@ const Positions: React.FC<React.PropsWithChildren<{ view?: PageView; isMobile?: 
       {rounds
         ?.filter((round) => {
           if (isMobile) return true
-          return !(round.epoch > currentEpoch) && !(round.epoch === currentEpoch && round.lockPrice === null)
+          return (
+            round.epoch > currentEpoch ||
+            (round.epoch === currentEpoch && round.lockPrice === null) ||
+            (round.closePrice === null && round.epoch === currentEpoch - 1)
+          )
         })
         .map((round) => {
           return <RoundCard round={round} isActive={isChangeTransition} />

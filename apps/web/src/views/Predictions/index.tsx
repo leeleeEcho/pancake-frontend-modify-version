@@ -70,7 +70,9 @@ const Predictions = () => {
       <Warnings />
       <RiskDisclaimer />
       {isDesktop ? <Desktop /> : <Mobile />}
-      <CollectWinningsPopup />
+
+      {/* 收取现金悬浮提示 */}
+      {/* <CollectWinningsPopup /> */}
       {/* </Container> */}
     </SwiperProvider>
   )

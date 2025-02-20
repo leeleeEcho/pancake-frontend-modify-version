@@ -1,13 +1,9 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { PredictionsChartView, PredictionStatus } from '@pancakeswap/prediction'
-// import { Box, Button, ChartIcon, Flex, Link } from '@pancakeswap/uikit'
-// import { ChartByLabel } from 'components/Chart/ChartbyLabel'
-// import { TabToggle } from 'components/TabToggle'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import debounce from 'lodash/debounce'
-// import delay from 'lodash/delay'
-// import dynamic from 'next/dynamic'
-import { memo, useEffect, useRef } from 'react'
+
+import { memo, useEffect, useMemo, useRef } from 'react'
 import Split, { SplitInstance } from 'split-grid'
 import { setChartPaneState, setChartView } from 'state/predictions'
 import {
@@ -19,11 +15,18 @@ import {
 } from 'state/predictions/hooks'
 import { styled } from 'styled-components'
 import Menu from './components/Menu'
-// import { ErrorNotification, PauseNotification } from './components/Notification'
+
 import TradingView from './components/TradingView'
 import { useConfig } from './context/ConfigProvider'
 import History from './History'
 import Positions from './Positions'
+
+// import { Box, Button, ChartIcon, Flex, Link } from '@pancakeswap/uikit'
+// import { ChartByLabel } from 'components/Chart/ChartbyLabel'
+// import { TabToggle } from 'components/TabToggle'
+// import delay from 'lodash/delay'
+// import dynamic from 'next/dynamic'
+// import { ErrorNotification, PauseNotification } from './components/Notification'
 
 import cs from './Desktop.module.scss'
 import RoundCard from './components/RoundCard'
@@ -298,7 +301,22 @@ const Desktop: React.FC<React.PropsWithChildren> = () => {
   // )
 
   const { currentEpoch, rounds } = useGetSortedRoundsCurrentEpoch()
+  // console.log('what is rounds', rounds)
 
+  const roundsExpired = useMemo(() => {
+    return (
+      rounds
+        ?.filter((round) => {
+          return (
+            !(round.epoch > currentEpoch) &&
+            !(round.epoch === currentEpoch && round.lockPrice === null) &&
+            !(round.closePrice === null && round.epoch === currentEpoch - 1)
+          )
+        })
+        .sort((a, b) => b.epoch - a.epoch)
+        .slice(0, 3) || []
+    )
+  }, [rounds])
   return (
     <StyledDesktop>
       <div className={cs.rootBox}>
@@ -311,17 +329,13 @@ const Desktop: React.FC<React.PropsWithChildren> = () => {
         <div className={cs.itemList}>{status === PredictionStatus.LIVE ? <Positions /> : null}</div>
         <div className={cs.itemNext}>
           <div>
-            {rounds
-              ?.filter((round) => {
-                return round.epoch > currentEpoch || (round.epoch === currentEpoch && round.lockPrice === null)
-              })
-              .map((round) => {
-                return (
-                  <div className={cs.item}>
-                    <RoundCard round={round} />
-                  </div>
-                )
-              })}
+            {roundsExpired.map((round) => {
+              return (
+                <div className={cs.item}>
+                  <RoundCard round={round} />
+                </div>
+              )
+            })}
           </div>
         </div>
         <div className={classNames(cs.itemHistory, { [cs.show]: isHistoryPaneOpen })}>
