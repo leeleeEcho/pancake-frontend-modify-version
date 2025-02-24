@@ -109,6 +109,8 @@ const Menu = (props) => {
           {/* <GlobalSettings mode={SettingsMode.GLOBAL} /> */}
 
           <NetworkSwitcher />
+
+          {/* 顶部右侧钱包按钮 */}
           <UserMenu />
         </>
       }

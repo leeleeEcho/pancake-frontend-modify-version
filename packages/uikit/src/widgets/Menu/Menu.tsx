@@ -13,12 +13,13 @@ import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
 import { MenuContext } from "./context";
 import { NavProps } from "./types";
+import PhoneMenu from "./components/PhoneMenu";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  /* display: grid;
+  grid-template-rows: auto 1fr; */
 `;
 
 const StyledNav = styled.nav`
@@ -29,7 +30,7 @@ const StyledNav = styled.nav`
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  transform: translate3d(0, 0, 0);
+  /* transform: translate3d(0, 0, 0); */
 
   padding-left: 16px;
   padding-right: 16px;
@@ -146,9 +147,10 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
           <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
             {banner && isMounted && <TopBannerContainer height={topBannerHeight}>{banner}</TopBannerContainer>}
             <StyledNav>
-              <Flex>
+              <Flex style={{ zIndex: isMobile ? 1100 : 1 }}>
                 {logoComponent ?? <Logo href={homeLink?.href ?? "/home"} />}
                 <AtomBox display={{ xs: "none", lg: "block" }}>
+                  {/* 头部菜单按钮们 */}
                   <MenuItems
                     ml="24px"
                     items={links}
@@ -158,17 +160,23 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
                   />
                 </AtomBox>
               </Flex>
+
+              {/* 右侧 */}
               <Flex alignItems="center" height="100%">
                 {rightSide}
+                {isMobile ? <PhoneMenu links={links} /> : null}
               </Flex>
             </StyledNav>
           </FixedContainer>
 
+          {/* 页面内容 */}
           <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
-            <Inner>{children}</Inner>
+            <Inner style={{ zIndex: 2 }}>{children}</Inner>
           </BodyWrapper>
         </Wrapper>
       </AtomBox>
+
+      {/* 页面底部 */}
       <Footer
         chainId={chainId}
         items={footerLinks}
@@ -182,6 +190,8 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
         buyCakeLink={buyCakeLink}
         mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
       />
+
+      {/* mobile的底部菜单 */}
       <AtomBox display={{ xs: "block", lg: "none" }}>
         <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />
       </AtomBox>

@@ -10,6 +10,7 @@ export const middleware = stackMiddlewares([withClientId, withGeoBlock, withUser
 export const config = {
   matcher: [
     '/',
+    '/home',
     '/swap',
     '/liquidity',
     '/pools',

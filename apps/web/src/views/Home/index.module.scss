@@ -1,6 +1,33 @@
-.root{
-    position: relative;
-    p{
-        color: #f00;
+.root {
+  position: relative;
+  background-image: url('/ztd/home/new/rat.png'), url('/ztd/home/new/cloud.png'), url('/ztd/home/new/cloud2.png');
+  background-repeat: no-repeat;
+  background-size: 360px auto, 255px auto, 255px auto;
+  background-position: left 450px, calc(100% + 20px) 1000px, left 1600px;
+  width: 100%;
+  // overflow: hidden;
+  p {
+    color: #f00;
+  }
+  .img3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .root {
+    background-image: url('/ztd/home/new/rat.png'), url('/ztd/home/new/cloud.png');
+    background-repeat: no-repeat;
+    background-size: 128px auto, 122px auto;
+    background-position: left 550px, calc(100% + 20px) 1000px, left 1600px;
+    .img3 {
+      position: absolute;
+      display: block;
+      bottom: -50px;
+      right: 50px;
+      width: 72px;
+      transform: rotate(-45deg);
+      z-index: 100;
     }
   }
+}

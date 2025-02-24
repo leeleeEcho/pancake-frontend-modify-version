@@ -8,6 +8,7 @@ const FixedContainer = styled.div`
   position: fixed;
   right: 18px;
   bottom: calc(110px + env(safe-area-inset-bottom));
+  z-index: 2;
 `;
 
 const ScrollToTopButtonV2 = () => {

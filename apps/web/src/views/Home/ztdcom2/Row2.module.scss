@@ -1,0 +1,141 @@
+.root {
+  position: relative;
+  margin-top: 200px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  & > .component {
+    position: relative;
+    width: 100%;
+
+    box-sizing: border-box;
+    .bannerSlide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        max-width: 1200px;
+        padding: 0 40px;
+
+        .imgBox {
+          flex: none;
+          height: 365px;
+          width: 365px;
+          position: relative;
+          & > img {
+            position: absolute;
+            height: 365px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .words {
+          margin-left: 150px;
+          box-sizing: border-box;
+          padding-top: 80px;
+          .t {
+            font-weight: 900;
+            font-size: 36px;
+            color: #ffc402;
+            line-height: 60px;
+          }
+          .i {
+            margin-top: 40px;
+            font-weight: 500;
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    .control {
+      position: absolute;
+      width: 100%;
+      bottom: 40px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      & > div {
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        background-color: #fff;
+        opacity: 0.4;
+        cursor: pointer;
+        &.chose {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .root {
+    position: relative;
+    margin-top: 240px;
+    height: 130px;
+    & > .component {
+      .bannerSlide {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .item {
+          width: 100%;
+          max-width: 1200px;
+          padding: 0 12px;
+
+          .imgBox {
+            height: 130px;
+            width: 130px;
+            & > img {
+              height: 130px;
+            }
+          }
+          .words {
+            margin-left: 10px;
+            padding-top: 12px;
+            .t {
+              font-size: 17px;
+              line-height: 20px;
+            }
+            .i {
+              margin-top: 10px;
+              font-size: 12px;
+              line-height: 19px;
+            }
+          }
+        }
+      }
+
+      .control {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        z-index: 10;
+        gap: 12px;
+        & > div {
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background-color: #fff;
+          opacity: 0.4;
+          cursor: pointer;
+          &.chose {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

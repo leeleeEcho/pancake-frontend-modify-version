@@ -1,3 +1,4 @@
+// L 头部菜单配置
 import { ContextApi } from '@pancakeswap/localization'
 import { SUPPORTED_CHAIN_IDS as PREDICTION_SUPPORTED_CHAINS } from '@pancakeswap/prediction'
 import {
@@ -9,6 +10,7 @@ import {
   MoreIcon,
   SwapFillIcon,
   SwapIcon,
+  HomeIcon,
 } from '@pancakeswap/uikit'
 import { SUPPORT_FARMS } from 'config/constants/supportChains'
 
@@ -44,6 +46,11 @@ const config: (
   chainId?: number,
 ) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
   [
+    {
+      label: t('Home'),
+      icon: HomeIcon,
+      href: '/home',
+    },
     {
       label: t('Swap'),
       icon: SwapIcon,

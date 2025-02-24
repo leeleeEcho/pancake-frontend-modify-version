@@ -3,6 +3,7 @@ import { MenuContext } from "../../widgets/Menu/context";
 import StyledMenuItem, { StyledMenuItemContainer } from "./styles";
 import { MenuItemProps } from "./types";
 import { useMatchBreakpoints } from "../../contexts";
+import cs from "./MenuItem.module.scss";
 
 const MenuItem: React.FC<React.PropsWithChildren<MenuItemProps>> = ({
   children,
@@ -38,7 +39,7 @@ const MenuItem: React.FC<React.PropsWithChildren<MenuItemProps>> = ({
     }
   }, [isActive, isMobile, scrollLayerRef]);
   return (
-    <StyledMenuItemContainer $isActive={isActive} $variant={variant} ref={menuItemRef}>
+    <StyledMenuItemContainer className={cs.menuBtn} $isActive={isActive} $variant={variant} ref={menuItemRef}>
       <StyledMenuItem
         {...itemLinkProps}
         $isActive={isActive}

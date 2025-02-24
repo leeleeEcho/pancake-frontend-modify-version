@@ -1,0 +1,280 @@
+.root {
+  position: relative;
+  min-height: 800px;
+  box-sizing: border-box;
+  background-image: url('/ztd/home/new/row4bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding: 112px 20px 119px 20px;
+  overflow: hidden;
+
+  & > .content {
+    position: relative;
+    width: 870px;
+    height: 570px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    box-sizing: border-box;
+    padding: 65px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .img1 {
+      position: absolute;
+      top: 72px;
+      left: 0;
+      transform: translateX(-100%);
+      width: 160px;
+    }
+    .img2 {
+      position: absolute;
+      top: 185px;
+      right: -180px;
+      transform: rotate(-45deg);
+      width: 200px;
+    }
+
+    .title {
+      position: relative;
+      font-weight: 900;
+      font-size: 35px;
+      font-style: normal;
+      color: #ffffff;
+      .star1 {
+        position: absolute;
+        width: 19px;
+        top: -15px;
+        left: -35px;
+      }
+      .star2 {
+        position: absolute;
+        width: 19px;
+        top: 15px;
+        right: -35px;
+      }
+      .star3 {
+        position: absolute;
+        width: 12px;
+        top: 10px;
+        right: -45px;
+      }
+    }
+
+    .tip {
+      font-weight: 500;
+      font-size: 20px;
+      color: #989898;
+      margin-top: 20px;
+    }
+
+    .infobox {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      margin-top: 55px;
+      & > div {
+        flex: 1;
+      }
+
+      .left {
+        position: relative;
+        border-radius: 24px 4px 4px 24px;
+        box-sizing: border-box;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 196, 2, 0.1) 100%);
+        backdrop-filter: blur(4px);
+        height: 300px;
+        padding: 32px;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          border: 1px solid rgba(255, 207, 35, 1);
+          border-radius: 24px 4px 4px 24px;
+          mask-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+          z-index: 1;
+        }
+
+        .item {
+          & > div {
+            &:nth-child(1) {
+              font-weight: 900;
+              font-size: 16px;
+              color: #ffffff;
+            }
+            &:nth-child(2) {
+              font-weight: 900;
+              font-size: 27px;
+              color: #ffc402;
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+
+      .right {
+        position: relative;
+        border-radius: 4px 24px 24px 4px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+        height: 300px;
+        padding: 32px;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          border: 1px solid rgba(255, 207, 35, 1);
+          border-radius: 4px 24px 24px 4px;
+          mask-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+          z-index: 1;
+        }
+
+        .t {
+          font-weight: 900;
+          font-size: 18px;
+          color: #ffffff;
+        }
+        .i {
+          margin-top: 40px;
+          font-weight: 400;
+          font-size: 14px;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          & > span {
+            position: relative;
+            & + span {
+              &::before {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 16px;
+                background-color: rgba(255, 255, 255, 0.8);
+                left: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+
+        .info {
+          font-weight: 600;
+          font-size: 16px;
+          color: #ffffff;
+          line-height: 24px;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .root {
+    position: relative;
+    min-height: auto;
+    box-sizing: border-box;
+    padding: 20px 20px 100px 20px;
+
+    & > .content {
+      position: relative;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 1);
+      padding: 30px 8px;
+      .img1 {
+        display: none;
+      }
+      .img2 {
+        display: none;
+      }
+
+      .title {
+        font-size: 20px;
+        .star1 {
+          display: none;
+        }
+        .star2 {
+          display: none;
+        }
+        .star3 {
+          display: none;
+        }
+      }
+
+      .tip {
+        font-weight: 500;
+        font-size: 14px;
+        color: #989898;
+        margin-top: 24px;
+      }
+
+      .infobox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin-top: 55px;
+        & > div {
+          flex: 1;
+        }
+
+        .left {
+          position: relative;
+          border-radius: 24px;
+          height: auto;
+          padding: 32px;
+          &::after {
+            border-radius: 24px;
+          }
+
+          .item {
+            & > div {
+              &:nth-child(1) {
+                font-size: 15px;
+              }
+              &:nth-child(2) {
+                font-size: 28px;
+              }
+            }
+            & + .item {
+              margin-top: 25px;
+            }
+          }
+        }
+
+        .right {
+          border-radius: 24px;
+          height: auto;
+          min-height: 300px;
+          &::after {
+            border-radius: 24px;
+          }
+
+          .t {
+            font-size: 15px;
+          }
+
+          .info {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
