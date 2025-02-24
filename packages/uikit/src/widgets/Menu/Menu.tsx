@@ -3,7 +3,7 @@ import throttle from "lodash/throttle";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { styled } from "styled-components";
 import { AtomBox } from "../../components/AtomBox";
-import BottomNav from "../../components/BottomNav";
+// import BottomNav from "../../components/BottomNav";
 import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";
 import Footer from "../../components/Footer";
@@ -192,9 +192,9 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
       />
 
       {/* mobile的底部菜单 */}
-      <AtomBox display={{ xs: "block", lg: "none" }}>
+      {/* <AtomBox display={{ xs: "block", lg: "none" }}>
         <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />
-      </AtomBox>
+      </AtomBox> */}
     </MenuContext.Provider>
   );
 };
