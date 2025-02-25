@@ -1,3 +1,4 @@
+// L 底部导航配置
 import { ContextApi } from "@pancakeswap/localization";
 import { FooterLinkType } from "../../../components/Footer/types";
 
@@ -123,7 +124,7 @@ import { FooterLinkType } from "../../../components/Footer/types";
 
 export const footerLinks: (t: ContextApi["t"]) => FooterLinkType[] = (t) => [
   {
-    label: "代币经济",
+    label: "Token economy",
     items: [
       {
         label: "Swap",
@@ -140,10 +141,10 @@ export const footerLinks: (t: ContextApi["t"]) => FooterLinkType[] = (t) => [
     ],
   },
   {
-    label: "开发者",
+    label: "Developer",
     items: [
       {
-        label: "贡献",
+        label: "Contribution",
         href: "#",
       },
       {
@@ -151,13 +152,13 @@ export const footerLinks: (t: ContextApi["t"]) => FooterLinkType[] = (t) => [
         href: "#",
       },
       {
-        label: "漏洞反馈",
+        label: "Vulnerability feedback",
         href: "#",
       },
     ],
   },
   {
-    label: "系统支持",
+    label: "System support",
     items: [
       {
         label: "Contact",

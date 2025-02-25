@@ -69,7 +69,7 @@
       margin-top: 20px;
     }
 
-    .infobox {
+    .infoBox {
       position: relative;
       display: flex;
       gap: 20px;
@@ -105,15 +105,20 @@
           & > div {
             &:nth-child(1) {
               font-weight: 900;
+              line-height: 19px;
               font-size: 16px;
               color: #ffffff;
             }
             &:nth-child(2) {
               font-weight: 900;
+              line-height: 32px;
               font-size: 27px;
               color: #ffc402;
               margin-top: 8px;
             }
+          }
+          & + .item {
+            margin-top: 26px;
           }
         }
       }
@@ -223,7 +228,7 @@
         margin-top: 24px;
       }
 
-      .infobox {
+      .infoBox {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -246,14 +251,14 @@
           .item {
             & > div {
               &:nth-child(1) {
-                font-size: 15px;
+                font-size: 16px;
               }
               &:nth-child(2) {
-                font-size: 28px;
+                font-size: 27px;
               }
             }
             & + .item {
-              margin-top: 25px;
+              margin-top: 26px;
             }
           }
         }

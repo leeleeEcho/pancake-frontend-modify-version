@@ -16,7 +16,7 @@ export default function Row4() {
 
         <div className={cs.tip}>Together we can make the ZTD community even stronger</div>
 
-        <div className={cs.infobox}>
+        <div className={cs.infoBox}>
           <div className={cs.left}>
             <div className={cs.item}>
               <div>Community member</div>
