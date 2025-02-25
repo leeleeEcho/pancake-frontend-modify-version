@@ -25,7 +25,7 @@ export default function Row2() {
           <SwiperSlide className={cs.bannerSlide}>
             <div className={cs.item}>
               <div className={cs.imgBox}>
-                <img src="/ztd/home/new/banner1@2x.png" />
+                <img src="/ztd/home/new/banner1@2x1.png" />
               </div>
               <div className={cs.words}>
                 <div className={cs.t}>Trading Teward</div>
