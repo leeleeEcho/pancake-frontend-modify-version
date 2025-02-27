@@ -1,5 +1,4 @@
-// import { Orders, TWAP as PancakeTWAP } from '@orbs-network/twap-ui-pancake'
-import { Orders, TWAP as PancakeTWAP } from 'components/pancake'
+import { Orders, TWAP as PancakeTWAP } from '@orbs-network/twap-ui-pancake'
 import { ChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/swap-sdk-core'
