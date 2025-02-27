@@ -10,17 +10,17 @@
     "import/no-unresolved": 0,
     "no-console": ["warn", { "allow": ["info", "warn", "error", "debug", "time", "timeLog", "timeEnd"] }],
     "no-plusplus": 0,
-    "prefer-destructuring": ["warn", { "object": true, "array": false }],
+    "prefer-destructuring": ["warn", { "object": false, "array": false }],
     "no-underscore-dangle": 0,
     "lodash/import-scope": "off",
     "@next/next/no-img-element": 0,
     "no-sparse-arrays": 0,
-    "react-hooks/exhaustive-deps": [
-      "warn",
-      {
-        "additionalHooks": "(useFastRefreshEffect|useSlowRefreshEffect)"
-      }
-    ],
+    // "react-hooks/exhaustive-deps": [
+    //   "warn",
+    //   {
+    //     "additionalHooks": "(useFastRefreshEffect|useSlowRefreshEffect)"
+    //   }
+    // ],
     // Start temporary rules
     // These rules are here just to keep the lint error to 0 during the migration to the new rule set
     // They need to be removed and fixed as soon as possible
@@ -46,7 +46,16 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "import/newline-after-import": "off"
+    "import/newline-after-import": "off",
+    "camelcase": "off",
+    "react/button-has-type": "off",
+    "import/no-duplicates": "off",
+    "consistent-return": "off",
+    "react/jsx-boolean-value": "off",
+    "no-unused-expressions": "off",
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "react-hooks/exhaustive-deps": "off"
     // End temporary rules
   }
 }

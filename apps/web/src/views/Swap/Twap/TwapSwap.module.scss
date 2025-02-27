@@ -1,0 +1,23 @@
+.root {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  padding: 66px 10px 10px;
+  gap: 10px;
+  grid-template-columns: 1fr 325px;
+  grid-template-rows: 500px 1fr;
+  grid-template-areas:
+    'chart info'
+    'history info';
+  & > .chart {
+    grid-area: chart;
+  }
+  & > .info {
+    grid-area: info;
+  }
+  & > .history {
+    grid-area: history;
+  }
+}

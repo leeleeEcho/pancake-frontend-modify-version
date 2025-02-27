@@ -1,3 +1,4 @@
+// L limit页面
 import { useTranslation } from '@pancakeswap/localization'
 import { Currency } from '@pancakeswap/sdk'
 import { AutoRow, BottomDrawer, Flex, StyledLink, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
@@ -16,6 +17,9 @@ import { StyledInputCurrencyWrapper, StyledSwapContainer } from '../styles'
 import { SwapFeaturesContext } from '../SwapFeaturesContext'
 import { SwapType } from '../types'
 import { OrderHistory, TWAPPanel } from './Twap'
+import TradingView from 'views/Predictions/components/TradingView'
+
+import cs from './TwapSwap.module.scss'
 
 export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
   const { query } = useRouter()
@@ -59,78 +63,91 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
   )
   useDefaultsFromURLSearch()
 
+  // return (
+  //   <Flex
+  //     width={['328px', '100%']}
+  //     height={isMobile ? 'auto' : '100%'}
+  //     justifyContent="center"
+  //     position="relative"
+  //     alignItems="flex-start"
+  //     mb={isMobile ? '40px' : '0'}
+  //   >
+  //     {isDesktop && (
+  //       <Flex width={isChartExpanded ? '100%' : '50%'} maxWidth="928px" flexDirection="column" style={{ gap: 20 }}>
+  //         {/* {isChartExpanded && (
+  //           <PriceChartContainer
+  //             inputCurrencyId={inputCurrencyId}
+  //             inputCurrency={currencies[Field.INPUT]}
+  //             outputCurrencyId={outputCurrencyId}
+  //             outputCurrency={currencies[Field.OUTPUT]}
+  //             isChartExpanded={isChartExpanded}
+  //             setIsChartExpanded={setIsChartExpanded}
+  //             isChartDisplayed={isChartDisplayed}
+  //             currentSwapPrice={singleTokenPrice}
+  //             isFullWidthContainer
+  //           />
+  //         )} */}
+  //         <TradingView />
+  //         <OrderHistory />
+  //       </Flex>
+  //     )}
+  //     {/* {!isDesktop && isChartSupported && (
+  //       <BottomDrawer
+  //         content={
+  //           <PriceChartContainer
+  //             inputCurrencyId={inputCurrencyId}
+  //             inputCurrency={currencies[Field.INPUT]}
+  //             outputCurrencyId={outputCurrencyId}
+  //             outputCurrency={currencies[Field.OUTPUT]}
+  //             isChartExpanded={isChartExpanded}
+  //             setIsChartExpanded={setIsChartExpanded}
+  //             isChartDisplayed={isChartDisplayed}
+  //             currentSwapPrice={singleTokenPrice}
+  //             isFullWidthContainer
+  //             isMobile
+  //           />
+  //         }
+  //         isOpen={isChartDisplayed}
+  //         setIsOpen={(isOpen) => setIsChartDisplayed?.(isOpen)}
+  //       />
+  //     )} */}
+
+  //     <Flex flexDirection="column">
+  //       {/* <StyledSwapContainer $isChartExpanded={isChartExpanded}> */}
+  //       {/* <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'}> */}
+  //       {/* <SwapSelection swapType={limit ? SwapType.LIMIT : SwapType.TWAP} style={{ marginBottom: 16 }} /> */}
+
+  //       <AppBody>
+  //         <TWAPPanel limit={limit} />
+  //       </AppBody>
+
+  //       <Flex flexDirection={!isDesktop ? 'column-reverse' : 'column'}>{!isDesktop && <OrderHistory />}</Flex>
+  //       {/* </StyledInputCurrencyWrapper> */}
+  //       {/* </StyledSwapContainer> */}
+  //     </Flex>
+  //   </Flex>
+  // )
+  const [fromSymbol, setFromSymbol] = useState('BNB')
+  const [toSymbol, setToSymbol] = useState('')
+
+  const onSymbolChange = (symbol: string, type: string) => {
+    if (type === 'from') {
+      setFromSymbol(symbol)
+    } else {
+      setToSymbol(symbol)
+    }
+  }
   return (
-    <Flex
-      width={['328px', '100%']}
-      height={isMobile ? 'auto' : '100%'}
-      justifyContent="center"
-      position="relative"
-      alignItems="flex-start"
-      mb={isMobile ? '40px' : '0'}
-    >
-      {isDesktop && (
-        <Flex width={isChartExpanded ? '100%' : '50%'} maxWidth="928px" flexDirection="column" style={{ gap: 20 }}>
-          {isChartSupported && (
-            <PriceChartContainer
-              inputCurrencyId={inputCurrencyId}
-              inputCurrency={currencies[Field.INPUT]}
-              outputCurrencyId={outputCurrencyId}
-              outputCurrency={currencies[Field.OUTPUT]}
-              isChartExpanded={isChartExpanded}
-              setIsChartExpanded={setIsChartExpanded}
-              isChartDisplayed={isChartDisplayed}
-              currentSwapPrice={singleTokenPrice}
-              isFullWidthContainer
-            />
-          )}
-          <OrderHistory />
-        </Flex>
-      )}
-      {!isDesktop && isChartSupported && (
-        <BottomDrawer
-          content={
-            <PriceChartContainer
-              inputCurrencyId={inputCurrencyId}
-              inputCurrency={currencies[Field.INPUT]}
-              outputCurrencyId={outputCurrencyId}
-              outputCurrency={currencies[Field.OUTPUT]}
-              isChartExpanded={isChartExpanded}
-              setIsChartExpanded={setIsChartExpanded}
-              isChartDisplayed={isChartDisplayed}
-              currentSwapPrice={singleTokenPrice}
-              isFullWidthContainer
-              isMobile
-            />
-          }
-          isOpen={isChartDisplayed}
-          setIsOpen={(isOpen) => setIsChartDisplayed?.(isOpen)}
-        />
-      )}
-      <Flex flexDirection="column">
-        <StyledSwapContainer $isChartExpanded={isChartExpanded}>
-          <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'}>
-            <SwapSelection swapType={limit ? SwapType.LIMIT : SwapType.TWAP} style={{ marginBottom: 16 }} />
-            <AppBody>
-              <TWAPPanel limit={limit} />
-            </AppBody>
-            <Flex flexDirection={!isDesktop ? 'column-reverse' : 'column'}>
-              {limit && (
-                <AutoRow gap="4px" justifyContent="center">
-                  <Text fontSize="14px" color="textSubtle">
-                    {t('Orders missing? Check out:')}
-                  </Text>
-                  <Link href="/limit-orders" passHref prefetch={false}>
-                    <StyledLink fontSize="14px" color="primary">
-                      {t('Limit V2 (deprecated)')}
-                    </StyledLink>
-                  </Link>
-                </AutoRow>
-              )}
-              {!isDesktop && <OrderHistory />}
-            </Flex>
-          </StyledInputCurrencyWrapper>
-        </StyledSwapContainer>
-      </Flex>
-    </Flex>
+    <section className={cs.root}>
+      <div className={cs.chart}>
+        <TradingView symbol={fromSymbol} />
+      </div>
+      <div className={cs.history}>
+        <OrderHistory />
+      </div>
+      <div className={cs.info}>
+        <TWAPPanel limit={!!limit} onSymbolChange={onSymbolChange} />
+      </div>
+    </section>
   )
 }

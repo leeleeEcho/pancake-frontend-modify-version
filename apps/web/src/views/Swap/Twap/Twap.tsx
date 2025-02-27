@@ -1,4 +1,5 @@
-import { Orders, TWAP as PancakeTWAP } from '@orbs-network/twap-ui-pancake'
+// import { Orders, TWAP as PancakeTWAP } from '@orbs-network/twap-ui-pancake'
+import { Orders, TWAP as PancakeTWAP } from 'components/pancake'
 import { ChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/swap-sdk-core'
@@ -41,7 +42,7 @@ import { useCurrencyUsdPrice } from 'hooks/useCurrencyUsdPrice'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useSwapHotTokenDisplay } from 'hooks/useSwapHotTokenDisplay'
 import { useTheme } from 'next-themes'
-import { ReactNode, useCallback, useContext, useMemo } from 'react'
+import { ReactNode, useCallback, useContext, useMemo, useState } from 'react'
 import { Field } from 'state/swap/actions'
 import { useSwapState } from 'state/swap/hooks'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
@@ -62,6 +63,7 @@ import { SwapFeaturesContext } from '../SwapFeaturesContext'
 import { FormContainer } from '../V3Swap/components'
 
 const useBestTrade = (fromToken?: string, toToken?: string, value?: string) => {
+  // console.log('fromToken:', fromToken)
   const independentCurrency = useCurrency(fromToken)
 
   const amount = useMemo(() => {
@@ -130,7 +132,11 @@ const useTokenModal = (
   return onPresentCurrencyModal
 }
 
-export function TWAPPanel({ limit }: { limit?: boolean }) {
+interface Props {
+  limit?: boolean
+  onSymbolChange: (symbol: string, type: string) => void
+}
+export function TWAPPanel({ limit, onSymbolChange }: Props) {
   const { isDesktop } = useMatchBreakpoints()
   const { chainId } = useActiveChainId()
   const tokens = useAllTokens()
@@ -173,18 +179,22 @@ export function TWAPPanel({ limit }: { limit?: boolean }) {
     })
   }, [setIsChartDisplayed, setIsSwapHotTokenDisplay])
 
+  // from 选择
   const onSrcTokenSelected = useCallback(
     (token: Currency) => {
+      onSymbolChange(token.symbol, 'from')
       handleCurrencySelect(true, token)
     },
-    [handleCurrencySelect],
+    [handleCurrencySelect, onSymbolChange],
   )
 
+  // to 选择
   const onDstTokenSelected = useCallback(
     (token: Currency) => {
+      onSymbolChange(token.symbol, 'to')
       handleCurrencySelect(false, token)
     },
-    [handleCurrencySelect],
+    [handleCurrencySelect, onSymbolChange],
   )
 
   return (
@@ -311,7 +321,7 @@ const Header = ({
       <Swap.CurrencyInputHeader
         title={
           <Flex alignItems="center" width="100%" justifyContent="space-between">
-            <Swap.CurrencyInputHeaderTitle>{limit ? 'LIMIT' : 'TWAP'}</Swap.CurrencyInputHeaderTitle>
+            <Swap.CurrencyInputHeaderTitle>LIMIT</Swap.CurrencyInputHeaderTitle>
             {isChartSupported && (
               <ColoredIconButton
                 onClick={() => {

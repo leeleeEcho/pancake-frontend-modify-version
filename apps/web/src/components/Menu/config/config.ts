@@ -52,37 +52,41 @@ const config: (
       href: '/home',
     },
     {
-      label: t('Swap'),
+      label: t('Trade'),
       icon: SwapIcon,
       fillIcon: SwapFillIcon,
       href: '/',
       hideSubNav: true,
-      //   items: [
-      //     {
-      //       label: t('Swap'),
-      //       href: '/',
-      //     },
-      //     {
-      //       label: t('Perps'),
-      //       href: getPerpetualUrl({
-      //         chainId,
-      //         languageCode,
-      //         isDark,
-      //       }),
-      //       confirmModalId: 'perpConfirmModal',
-      //       type: DropdownMenuItemType.EXTERNAL_LINK,
-      //     },
-      //     {
-      //       label: t('Options'),
-      //       href: getOptionsUrl(),
-      //       confirmModalId: 'optionsConfirmModal',
-      //       type: DropdownMenuItemType.EXTERNAL_LINK,
-      //     },
-      //     {
-      //       label: t('Buy Crypto'),
-      //       href: '/buy-crypto',
-      //     },
-      //   ].map((item) => addMenuItemSupported(item, chainId)),
+      items: [
+        {
+          label: t('Swap'),
+          href: '/',
+        },
+        {
+          label: t('Limit'),
+          href: '/swap/limit',
+        },
+        // {
+        //   label: t('Perps'),
+        //   href: getPerpetualUrl({
+        //     chainId,
+        //     languageCode,
+        //     isDark,
+        //   }),
+        //   confirmModalId: 'perpConfirmModal',
+        //   type: DropdownMenuItemType.EXTERNAL_LINK,
+        // },
+        // {
+        //   label: t('Options'),
+        //   href: getOptionsUrl(),
+        //   confirmModalId: 'optionsConfirmModal',
+        //   type: DropdownMenuItemType.EXTERNAL_LINK,
+        // },
+        // {
+        //   label: t('Buy Crypto'),
+        //   href: '/buy-crypto',
+        // },
+      ].map((item) => addMenuItemSupported(item, chainId)),
     },
     {
       label: 'Explore',
@@ -108,16 +112,16 @@ const config: (
       label: t('Play'),
       icon: GameIcon,
       href: '/prediction',
-      overrideSubNavItems: [
-        {
-          label: t('Prediction'),
-          href: '/prediction',
-        },
-        {
-          label: t('Lottery'),
-          href: '/lottery',
-        },
-      ],
+      // overrideSubNavItems: [
+      //   {
+      //     label: t('Prediction'),
+      //     href: '/prediction',
+      //   },
+      //   {
+      //     label: t('Lottery'),
+      //     href: '/lottery',
+      //   },
+      // ],
       items: [
         // {
         //   status: { text: t('New'), color: 'success' },
@@ -129,7 +133,7 @@ const config: (
           label: t('Prediction'),
           href: '/prediction',
           image: '/images/decorations/prediction.png',
-          supportChainIds: PREDICTION_SUPPORTED_CHAINS,
+          // supportChainIds: PREDICTION_SUPPORTED_CHAINS,
         },
         // {
         //   label: t('Lottery'),
