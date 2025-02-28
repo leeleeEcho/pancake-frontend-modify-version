@@ -146,12 +146,14 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
   }, [])
   return (
     <section className={cs.root}>
-      <div className={cs.chart}>{isTradShow && <TradingView symbol={fromSymbol} />}</div>
-      <div className={classNames(cs.history, 'twapOrderSelf')}>
-        <OrderHistory />
-      </div>
-      <div className={classNames(cs.info, 'twapPanelSelf')}>
-        <TWAPPanel limit={!!limit} onSymbolChange={onSymbolChange} />
+      <div className={cs.content}>
+        <div className={cs.chart}>{isTradShow && <TradingView symbol={fromSymbol} />}</div>
+        <div className={classNames(cs.history, 'twapOrderSelf')}>
+          <OrderHistory />
+        </div>
+        <div className={classNames(cs.info, 'twapPanelSelf')}>
+          <TWAPPanel limit={!!limit} onSymbolChange={onSymbolChange} />
+        </div>
       </div>
     </section>
   )
