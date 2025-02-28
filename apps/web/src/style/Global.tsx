@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     /* --colors-inputSecondary: none; */
     --colors-primary60: #f0f0f0;
     --colors-success: #FFC402;
+    --colors-cardBorder:#1c1b25;
+    --radii-card:4px; 
   }
 
   html {
@@ -43,6 +45,67 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     z-index: 2;
   }
+
+  .twapOrderSelf{
+    .css-9fbwoq{
+      background-color: #1c1b25;
+    }
+    .css-dr0zfv, .css-9fbwoq{
+      border-radius: 0;
+      color: #fff;
+    }
+  }
+
+  .twapPanelSelf {
+    .css-g226oo {
+      background-color: #15141c !important;
+    }
+    .css-25x1fc, .css-dsqei{
+      border-color: #ffc402;
+      color: #ffc402;
+    }
+
+    .css-160rjgb .twap-limit-reset * {
+      stroke: #ffc402;
+    }
+
+    .css-3jg30m {
+      &:hover{
+        button{
+          background-color: rgba(0,0,0,.5);
+        }
+        
+      }
+      button{
+        background-color: rgba(0,0,0,.5);
+      }
+      button svg{
+        color: #ffc402;
+        fill: #ffc402;
+      }
+    } 
+
+    .twap-switch .Mui-checked+.MuiSwitch-track{
+      background: #ffc402 !important;
+    }
+
+    .css-daxhzn, .css-jtp3vz{
+      background-color: #15141c;
+    }
+
+    .twap-powered-by{
+      display:none;
+    }
+
+    .css-mfhuwl-MuiSlider-root .MuiSlider-track{
+      background-color: #ffc402;
+      border-color: #ffc402;
+    }
+
+    .css-1osrwpx p{
+      color: #ffc402;
+    }
+}
 `
 
 export default GlobalStyle

@@ -19,6 +19,7 @@ import { SwapType } from '../types'
 import { OrderHistory, TWAPPanel } from './Twap'
 import TradingView from 'views/Predictions/components/TradingView'
 
+import classNames from 'classnames'
 import cs from './TwapSwap.module.scss'
 
 export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
@@ -137,15 +138,19 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
       setToSymbol(symbol)
     }
   }
+
+  const [isTradShow, setTradShow] = useState(false)
+
+  useEffect(() => {
+    setTradShow(true)
+  }, [])
   return (
     <section className={cs.root}>
-      <div className={cs.chart}>
-        <TradingView symbol={fromSymbol} />
-      </div>
-      <div className={cs.history}>
+      <div className={cs.chart}>{isTradShow && <TradingView symbol={fromSymbol} />}</div>
+      <div className={classNames(cs.history, 'twapOrderSelf')}>
         <OrderHistory />
       </div>
-      <div className={cs.info}>
+      <div className={classNames(cs.info, 'twapPanelSelf')}>
         <TWAPPanel limit={!!limit} onSymbolChange={onSymbolChange} />
       </div>
     </section>

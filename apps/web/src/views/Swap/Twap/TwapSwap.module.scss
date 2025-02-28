@@ -2,20 +2,22 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   display: grid;
   padding: 66px 10px 10px;
   gap: 10px;
   grid-template-columns: 1fr 325px;
-  grid-template-rows: 500px 1fr;
+  grid-template-rows: 500px auto;
   grid-template-areas:
     'chart info'
     'history info';
   & > .chart {
     grid-area: chart;
+    background-color: #1c1b25;
   }
   & > .info {
     grid-area: info;
+    background-color: #1c1b25;
   }
   & > .history {
     grid-area: history;
