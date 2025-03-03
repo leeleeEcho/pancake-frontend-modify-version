@@ -129,7 +129,7 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
   //   </Flex>
   // )
   const [fromSymbol, setFromSymbol] = useState('BNB')
-  const [toSymbol, setToSymbol] = useState('')
+  const [toSymbol, setToSymbol] = useState('USD')
 
   const onSymbolChange = (symbol: string, type: string) => {
     if (type === 'from') {
@@ -147,7 +147,7 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
   return (
     <section className={cs.root}>
       <div className={cs.content}>
-        <div className={cs.chart}>{isTradShow && <TradingView symbol={fromSymbol} />}</div>
+        <div className={cs.chart}>{isTradShow && <TradingView fromSymbol={fromSymbol} toSymbol={toSymbol} />}</div>
         <div className={classNames(cs.history, 'twapOrderSelf')}>
           <OrderHistory />
         </div>

@@ -59,13 +59,19 @@ const config: (
       hideSubNav: true,
       items: [
         {
+          label: t('Limit'),
+          href: '/swap/limit',
+        },
+        {
           label: t('Swap'),
           href: '/',
         },
         {
-          label: t('Limit'),
-          href: '/swap/limit',
+          label: t('Prediction'),
+          href: '/prediction',
+          // supportChainIds: PREDICTION_SUPPORTED_CHAINS,
         },
+
         // {
         //   label: t('Perps'),
         //   href: getPerpetualUrl({
@@ -108,45 +114,45 @@ const config: (
         },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
-    {
-      label: t('Play'),
-      icon: GameIcon,
-      href: '/prediction',
-      // overrideSubNavItems: [
-      //   {
-      //     label: t('Prediction'),
-      //     href: '/prediction',
-      //   },
-      //   {
-      //     label: t('Lottery'),
-      //     href: '/lottery',
-      //   },
-      // ],
-      items: [
-        // {
-        //   status: { text: t('New'), color: 'success' },
-        //   label: t('Springboard'),
-        //   href: 'https://springboard.pancakeswap.finance',
-        //   type: DropdownMenuItemType.EXTERNAL_LINK,
-        // },
-        {
-          label: t('Prediction'),
-          href: '/prediction',
-          image: '/images/decorations/prediction.png',
-          // supportChainIds: PREDICTION_SUPPORTED_CHAINS,
-        },
-        // {
-        //   label: t('Lottery'),
-        //   href: '/lottery',
-        //   image: '/images/decorations/lottery.png',
-        // },
-        // {
-        //   label: t('Quests'),
-        //   href: 'https://quest.pancakeswap.finance/quests',
-        //   type: DropdownMenuItemType.EXTERNAL_LINK,
-        // },
-      ].map((item) => addMenuItemSupported(item, chainId)),
-    },
+    // {
+    //   label: t('Play'),
+    //   icon: GameIcon,
+    //   href: '/prediction',
+    //   // overrideSubNavItems: [
+    //   //   {
+    //   //     label: t('Prediction'),
+    //   //     href: '/prediction',
+    //   //   },
+    //   //   {
+    //   //     label: t('Lottery'),
+    //   //     href: '/lottery',
+    //   //   },
+    //   // ],
+    //   items: [
+    //     // {
+    //     //   status: { text: t('New'), color: 'success' },
+    //     //   label: t('Springboard'),
+    //     //   href: 'https://springboard.pancakeswap.finance',
+    //     //   type: DropdownMenuItemType.EXTERNAL_LINK,
+    //     // },
+    //     {
+    //       label: t('Prediction'),
+    //       href: '/prediction',
+    //       image: '/images/decorations/prediction.png',
+    //       // supportChainIds: PREDICTION_SUPPORTED_CHAINS,
+    //     },
+    //     // {
+    //     //   label: t('Lottery'),
+    //     //   href: '/lottery',
+    //     //   image: '/images/decorations/lottery.png',
+    //     // },
+    //     // {
+    //     //   label: t('Quests'),
+    //     //   href: 'https://quest.pancakeswap.finance/quests',
+    //     //   type: DropdownMenuItemType.EXTERNAL_LINK,
+    //     // },
+    //   ].map((item) => addMenuItemSupported(item, chainId)),
+    // },
     {
       label: t('Info'),
       href: '/info/v3',
