@@ -129,7 +129,7 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
   //   </Flex>
   // )
   const [fromSymbol, setFromSymbol] = useState('BNB')
-  const [toSymbol, setToSymbol] = useState('USD')
+  const [toSymbol, setToSymbol] = useState('USDT')
 
   const onSymbolChange = (symbol: string, type: string) => {
     if (type === 'from') {

@@ -140,7 +140,7 @@ export const CAKE = {
     'PancakeSwap Token',
     'https://pancakeswap.finance/',
   ),
-  [ChainId.BSC]: CAKE_MAINNET,
+  [ChainId.BSC]: CAKE_MAINNET, //
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
   [ChainId.POLYGON_ZKEVM]: new ERC20Token(
     ChainId.POLYGON_ZKEVM,

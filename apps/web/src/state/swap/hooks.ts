@@ -222,6 +222,7 @@ export function queryParametersToSwapState(
     typeof parsedQs.outputCurrency === 'string'
       ? safeGetAddress(parsedQs.outputCurrency) || nativeSymbol
       : defaultOutputCurrency
+
   if (inputCurrency === outputCurrency) {
     if (typeof parsedQs.outputCurrency === 'string') {
       inputCurrency = ''
@@ -261,12 +262,13 @@ export function useDefaultsFromURLSearch():
 
   useEffect(() => {
     if (!chainId || !native || !isReady) return
+
+    // L 由第3个参数决定
     const parsed = queryParametersToSwapState(
       query,
       native.symbol,
-      CAKE[chainId]?.address ?? STABLE_COIN[chainId]?.address ?? USDC[chainId]?.address ?? USDT[chainId]?.address,
+      USDT[chainId]?.address ?? CAKE[chainId]?.address ?? STABLE_COIN[chainId]?.address ?? USDC[chainId]?.address,
     )
-
     dispatch(
       replaceSwapState({
         typedValue: parsed.typedValue,
