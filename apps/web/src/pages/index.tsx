@@ -1,14 +1,41 @@
-import { CHAIN_IDS } from 'utils/wagmi'
-import SwapLayout from 'views/Swap/SwapLayout'
-import Swap from 'views/SwapSimplify'
+// import { CHAIN_IDS } from 'utils/wagmi'
+// import SwapLayout from 'views/Swap/SwapLayout'
+// import Swap from 'views/SwapSimplify'
 
-const SwapPage = () => (
+// const SwapPage = () => (
+//   <SwapLayout>
+//     <Swap />
+//   </SwapLayout>
+// )
+
+// SwapPage.chains = CHAIN_IDS
+// SwapPage.screen = true
+
+// export default SwapPage
+
+import dynamic from 'next/dynamic'
+import { CHAIN_IDS } from 'utils/wagmi'
+import Page from 'views/Page'
+import SwapLayout from 'views/Swap/SwapLayout'
+
+const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return (
+    <Page showExternalLink={false} showHelpLink={false}>
+      {children}
+    </Page>
+  )
+}
+
+const TwapAndLimitSwap = dynamic(() => import('views/Swap/Twap/TwapSwap'), { ssr: false })
+
+const TwapPage = () => (
   <SwapLayout>
-    <Swap />
+    <TwapAndLimitSwap />
   </SwapLayout>
 )
 
-SwapPage.chains = CHAIN_IDS
-SwapPage.screen = true
+TwapPage.chains = CHAIN_IDS
+TwapPage.screen = true
+TwapPage.Layout = Layout
 
-export default SwapPage
+export default TwapPage

@@ -30,6 +30,7 @@ import Positions from './Positions'
 
 import cs from './Desktop.module.scss'
 import RoundCard from './components/RoundCard'
+import CardList from './components/DeskTopListItem'
 import classNames from 'classnames'
 
 // const ChainlinkChart = dynamic(() => import('./components/ChainlinkChart'), { ssr: false })
@@ -328,14 +329,24 @@ const Desktop: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div className={cs.itemList}>{status === PredictionStatus.LIVE ? <Positions /> : null}</div>
         <div className={cs.itemNext}>
-          <div>
-            {roundsExpired.map((round) => {
-              return (
-                <div className={cs.item}>
-                  <RoundCard round={round} />
-                </div>
-              )
-            })}
+          <div className={cs.doneList}>
+            <ul className={cs.t}>
+              <li>Block</li>
+              <li>UP/DOWN</li>
+              <li>Closed Price</li>
+              <li>Locked Price</li>
+              <li>Prize Pool</li>
+            </ul>
+            <ul className={cs.l}>
+              {roundsExpired.map((round) => {
+                return <CardList round={round} />
+              })}
+            </ul>
+            {/* <ul className={cs.l}>
+              {roundsExpired.map((round) => {
+                return <RoundCard round={round} />
+              })}
+            </ul> */}
           </div>
         </div>
         <div className={classNames(cs.itemHistory, { [cs.show]: isHistoryPaneOpen })}>

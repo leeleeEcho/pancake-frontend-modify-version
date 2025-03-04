@@ -60,11 +60,11 @@ const config: (
       items: [
         {
           label: t('Limit'),
-          href: '/swap/limit',
+          href: '/',
         },
         {
           label: t('Swap'),
-          href: '/',
+          href: '/swap',
         },
         {
           label: t('Prediction'),
