@@ -208,7 +208,7 @@ const config = {
         permanent: false,
       },
       {
-        source: '/swap',
+        source: '/swap/limit',
         destination: '/',
         permanent: true,
       },
