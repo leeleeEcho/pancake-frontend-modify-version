@@ -18,6 +18,7 @@ import { SwapFeaturesContext } from '../SwapFeaturesContext'
 import { SwapType } from '../types'
 import { OrderHistory, TWAPPanel } from './Twap'
 import TradingView from 'views/Predictions/components/TradingView'
+import { PositionPage } from 'views/universalFarms/PositionPage'
 
 import classNames from 'classnames'
 import cs from './TwapSwap.module.scss'
@@ -155,6 +156,7 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
           <TWAPPanel limit={!!limit} onSymbolChange={onSymbolChange} />
         </div>
       </div>
+      <PositionPage />
     </section>
   )
 }

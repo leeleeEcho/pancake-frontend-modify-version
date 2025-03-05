@@ -388,6 +388,7 @@ export function AddLiquidityV3Layout({
   handleRefresh?: () => void
   children: React.ReactNode
 }) {
+  const router = useRouter()
   const { t } = useTranslation()
   const { chainId } = useActiveChainId()
 
@@ -419,11 +420,14 @@ export function AddLiquidityV3Layout({
     [pool, baseCurrency],
   )
 
+  const goBack = () => {
+    router.back()
+  }
   return (
     <BodyWrapper mb={isMobile ? '40px' : '0px'}>
       <AppHeader
         title={title}
-        backTo="/liquidity/positions"
+        backTo={goBack} // '/liquidity/positions'
         IconSlot={
           <>
             {selectType === SELECTOR_TYPE.V3 && <AprCalculatorV2 derived pool={pool} inverted={inverted} />}
