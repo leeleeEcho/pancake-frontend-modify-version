@@ -1,6 +1,6 @@
 import { Badge, BadgeLogo, BadgeText } from "./Badge";
 
-const pancakeSwapLogo = "https://assets.pancakeswap.finance/web/banners/pancakeswap-logo.png";
+const pancakeSwapLogo = "https://www.ztdx.io/ztd/head/logo.jpg";
 
 interface PancakeSwapBadgeProps {
   whiteText?: boolean;
