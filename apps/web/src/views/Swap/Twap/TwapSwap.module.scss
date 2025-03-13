@@ -24,4 +24,7 @@
       grid-area: history;
     }
   }
+  & > .positionBox {
+    padding: 0 10px;
+  }
 }

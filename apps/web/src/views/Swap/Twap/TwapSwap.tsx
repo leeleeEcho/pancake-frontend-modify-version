@@ -93,7 +93,9 @@ export default function TwapAndLimitSwap({ limit }: { limit?: boolean }) {
           <TWAPPanel limit={!!limit} onSymbolChange={onSymbolChange} />
         </div>
       </div>
-      <PositionPage />
+      <div className={cs.positionBox}>
+        <PositionPage />
+      </div>
     </section>
   )
 }
