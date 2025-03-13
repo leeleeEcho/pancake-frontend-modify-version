@@ -38,41 +38,34 @@ const useSendPushNotification = (): IUseSendNotification => {
   }
 
   async function subscribeToPushNotifications() {
-    if ('serviceWorker' in navigator) {
-      try {
-        const registration = await navigator.serviceWorker.register('/service-worker-sw.js')
-        await navigator.serviceWorker.ready
-
-        const existingSubscription = await registration.pushManager.getSubscription()
-
-        if (existingSubscription) {
-          // Unsubscribe the user from the existing subscription // fixes broken subscription
-          await existingSubscription.unsubscribe()
-        }
-
-        const secretKeyBuffer = Buffer.from(WEB_PUSH_ENCRYPTION_KEY, 'hex')
-        const ivBuffer = Buffer.from(WEB_PUSH_IV, 'hex')
-
-        const newSubscription = await registration.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey: PUBLIC_VAPID_KEY,
-        })
-
-        const data = JSON.stringify(newSubscription)
-        const cipher = crypto.createCipheriv('aes-256-cbc', secretKeyBuffer, ivBuffer)
-
-        let encryptedData = cipher.update(data, 'utf8', 'hex')
-        encryptedData += cipher.final('hex')
-
-        await fetch(`${NOTIFICATION_HUB_BASE_URL}/subscribe`, {
-          method: 'POST',
-          body: JSON.stringify({ subscription: encryptedData, user: address }),
-          headers: { 'Content-Type': 'application/json' },
-        })
-      } catch (error) {
-        console.error('Failed to subscribe to push notifications', error)
-      }
-    }
+    // if ('serviceWorker' in navigator) {
+    //   try {
+    //     const registration = await navigator.serviceWorker.register('/service-worker-sw.js')
+    //     await navigator.serviceWorker.ready
+    //     const existingSubscription = await registration.pushManager.getSubscription()
+    //     if (existingSubscription) {
+    //       // Unsubscribe the user from the existing subscription // fixes broken subscription
+    //       await existingSubscription.unsubscribe()
+    //     }
+    //     const secretKeyBuffer = Buffer.from(WEB_PUSH_ENCRYPTION_KEY, 'hex')
+    //     const ivBuffer = Buffer.from(WEB_PUSH_IV, 'hex')
+    //     const newSubscription = await registration.pushManager.subscribe({
+    //       userVisibleOnly: true,
+    //       applicationServerKey: PUBLIC_VAPID_KEY,
+    //     })
+    //     const data = JSON.stringify(newSubscription)
+    //     const cipher = crypto.createCipheriv('aes-256-cbc', secretKeyBuffer, ivBuffer)
+    //     let encryptedData = cipher.update(data, 'utf8', 'hex')
+    //     encryptedData += cipher.final('hex')
+    //     await fetch(`${NOTIFICATION_HUB_BASE_URL}/subscribe`, {
+    //       method: 'POST',
+    //       body: JSON.stringify({ subscription: encryptedData, user: address }),
+    //       headers: { 'Content-Type': 'application/json' },
+    //     })
+    //   } catch (error) {
+    //     console.error('Failed to subscribe to push notifications', error)
+    //   }
+    // }
   }
 
   const sendPushNotification = async (notificationType: BuilderNames, args: string[], account: string) => {

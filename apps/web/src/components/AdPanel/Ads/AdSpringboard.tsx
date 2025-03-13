@@ -21,9 +21,9 @@ export const AdSpringboard = (props: AdPlayerProps) => {
           {t('SpringBoard!!')}
         </Text>
       </BodyText>
-      <AdButton mt="16px" href={actionLink} externalIcon isExternalLink>
+      {/* <AdButton mt="16px" href={actionLink} externalIcon isExternalLink>
         {t('Learn More')}
-      </AdButton>
+      </AdButton> */}
     </AdCard>
   )
 }
