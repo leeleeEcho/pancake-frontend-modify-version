@@ -9,7 +9,7 @@ import { setChartView } from 'state/predictions'
 import { useChartView } from 'state/predictions/hooks'
 import { styled } from 'styled-components'
 import Menu from './components/Menu'
-import TradingView from './components/TradingView'
+import TradingView from './components/TW'
 import { useConfig } from './context/ConfigProvider'
 
 const ChainlinkChart = dynamic(() => import('./components/ChainlinkChart'), { ssr: false })

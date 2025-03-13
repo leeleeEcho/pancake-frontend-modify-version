@@ -16,7 +16,7 @@ import {
 import { styled } from 'styled-components'
 import Menu from './components/Menu'
 
-import TradingView from './components/TradingView'
+import TradingView from './components/TW'
 import { useConfig } from './context/ConfigProvider'
 import History from './History'
 import Positions from './Positions'
