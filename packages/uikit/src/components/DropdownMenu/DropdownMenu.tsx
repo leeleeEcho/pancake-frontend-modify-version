@@ -174,7 +174,7 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const hasItems = items.length > 0;
   const { styles, attributes } = usePopper(targetRef, tooltipRef, {
-    strategy: isBottomNav ? "absolute" : "fixed",
+    strategy: isBottomNav ? "absolute" : "absolute",
     placement: isBottomNav ? "top" : "bottom-start",
     modifiers: [{ name: "offset", options: { offset: [0, isBottomNav ? 6 : 0] } }],
   });
