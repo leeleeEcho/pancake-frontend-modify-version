@@ -38,7 +38,8 @@ export const metaMaskConnector = injected({ target: 'metaMask', shimDisconnect: 
 export const trustConnector = injected({ target: 'trust', shimDisconnect: false })
 
 const bloctoConnector = blocto({
-  appId: 'e2f2f0cd-3ceb-4dec-b293-bb555f2ed5af',
+  // appId: 'e2f2f0cd-3ceb-4dec-b293-bb555f2ed5af',
+  appId: '06ade6f1-6704-46bc-859f-9bb9b8f6be79',
 })
 
 export const binanceWeb3WalletConnector = getWagmiConnectorV2()

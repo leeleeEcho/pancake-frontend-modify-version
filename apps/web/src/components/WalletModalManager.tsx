@@ -8,7 +8,7 @@ import { ChainId } from '@pancakeswap/chains'
 import { useMemo } from 'react'
 import { logGTMWalletConnectEvent } from 'utils/customGTMEventTracking'
 import { useConnect } from 'wagmi'
-
+// L 链接钱包模态框
 const WalletModalManager: React.FC<{ isOpen: boolean; onDismiss?: () => void }> = ({ isOpen, onDismiss }) => {
   const { login } = useAuth()
   const {
